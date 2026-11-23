@@ -929,6 +929,11 @@ def jamestown_airlock(surface, root):
         surface.box((0.28, y, upper + 0.049), (0.042, 0.035, 0.056), "steel")
     surface.box((0.28, -0.175, upper + 0.078), (0.035, 0.15, 0.021), "gold")
     surface.box((0, 0.657, lower + 0.048), (0.17, 0.038, 0.045), "gold")
+    # Each jamb carries a small downlight outside the gasket and the ladder grip.
+    jamestown_lamps(surface, root, [
+        ((side * 0.490, 0.205, upper + 0.005), (0, 0, 1), (-side * 0.22, -1, 0.65))
+        for side in (-1, 1)
+    ], radius=0.072, distance=8, spread=94, intensity=1.25)
     box_collider(root, "Airlock", (0, -0.04, upper + 0.25), (0.62, 0.42, 0.92), True, (sqrt(0.5), -sqrt(0.5), 0, 0))
     box_collider(root, "Ladder", (0, -0.39, upper + 0.19), (0.57, 0.42, 0.80), True, (sqrt(0.5), -sqrt(0.5), 0, 0))
     joint(root, "airlockDockPlane", (0, 0, lower), downward=True)
@@ -1015,6 +1020,41 @@ def jamestown_foot(surface, root):
     joint(root, "pistonSeat", (0, 0, 0))
 
 
+def jamestown_lamps(surface, root, mounts, radius, distance, spread, intensity):
+    """Bolt flanged, hooded LED heads to the given planes in Blender coordinates."""
+    lenses = Surface()
+    for index, (mount, normal, direction) in enumerate(mounts, 1):
+        axis = unit(direction)
+        pivot = tuple(p + radius * 0.65 * n for p, n in zip(mount, normal))
+
+        def fitting(base, forward):
+            tangent = unit(cross((0, 1, 0), forward))
+            up = cross(forward, tangent)
+            return lambda x, y, z: tuple(p + x * t + y * u + z * n
+                                         for p, t, u, n in zip(base, tangent, up, forward))
+
+        foot = fitting(mount, normal)
+        face = fitting(pivot, axis)
+        surface.lathe([(-0.012, radius), (0.014, radius), (0.026, 0.64 * radius)],
+                      "steel", 12, orient=foot)
+        surface.lathe([(-0.027, radius * 0.53), (0.002, radius * 0.83), (0.035, radius * 0.83),
+                       (0.039, radius * 0.66), (0.031, radius * 0.63)],
+                      "alloy", 12, orient=face, caps=False)
+        lenses.lathe([(0.030, radius * 0.64), (0.034, radius * 0.62)], "white", 12, orient=face)
+        # Unity spots emit along +Z, which is +Y in the editable Blender coordinate system.
+        q = unit((1 + axis[1], axis[2], 0, -axis[0]))
+        housing = node("Lamp " + str(index))
+        source = node("jamestownFlood", face(0, 0, 0.043), q)
+        source.light = mu.MuLight()
+        source.light.type, source.light.color = 0, (1, 1, 1, 1)
+        source.light.range, source.light.spotAngle, source.light.intensity = distance, spread, intensity
+        source.light.cullingMask = 0x828001  # Stock KSP flight spotlight layers.
+        housing.children.append(source)
+        root.children.append(housing)
+    add_skin(root, lenses, "Exterior lamp lenses")
+    root.children[-1].renderer.materials = [1]
+
+
 def jamestown_cradle(surface, root, p, pod_mounts=()):
     lo, hi = -p.height / 2, p.height / 2
     platform_depth = 0.12 if pod_mounts else 0.36
@@ -1027,6 +1067,11 @@ def jamestown_cradle(surface, root, p, pod_mounts=()):
         skirt = [(0.13, 1.34), (0.23, 1.57), (0.52, 1.62), (0.70, 1.36)]
         surface.lathe(skirt, "steel", 32, stripe=lambda band, i: "alloy" if i % 8 in (1, 6) else "steel")
         hull_collider(root, skirt, 24)
+        # Aim outside the ring and away from the Sparks, jacks and docking lanes.
+        jamestown_lamps(surface, root, [
+            ((side * 1.594, 0, 0.42), (side, 0, 0), (side * 0.80, 0, -1))
+            for side in (-1, 1)
+        ], radius=0.106, distance=25, spread=86, intensity=1.8)
         surface.box((0, 0, 0.48), (1.82, 1.02, 0.31), "gasket")
         for side in (-1, 1):
             surface.beam((-0.89, 0.45 * side, 0.52), (0.89, -0.45 * side, 0.34), 0.048, "alloy")
@@ -1295,4 +1340,10 @@ def finish_model(obj, surface):
     texture.name, texture.type = "livery.png", 0
     result = mu.Mu(obj.transform.name)
     result.obj, result.materials, result.textures = obj, [material], [texture]
+    if any(child.transform.name == "Exterior lamp lenses" for child in obj.children):
+        lens = mu.MuMaterial()
+        lens.name, lens.shaderName = "Jamestown LED lenses", "KSP/Emissive/Diffuse"
+        lens.textureProperties.update({"_MainTex": tex, "_Emissive": tex})
+        lens.colorProperties["_EmissiveColor"] = (0, 0, 0, 1)
+        result.materials.append(lens)
     return result

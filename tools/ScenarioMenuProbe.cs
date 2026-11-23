@@ -79,7 +79,14 @@ public sealed class ScenarioMenuProbe : MonoBehaviour
             var selected = ((IEnumerable)Field(dialog, "saves").GetValue(dialog)).Cast<object>()
                 .Single(save => (string)Field(save, "name").GetValue(save) == titles[i]);
             Need((bool)Method(selected, "CanRestart") == (i == 3), titles[i] + " selected an unexpected start or resume");
-            Debug.Log("[FAM Scenario Probe] Menu loads " + Method(selected, "LoadPath"));
+            var selectedPath = (string)Method(selected, "LoadPath");
+            Debug.Log("[FAM Scenario Probe] Menu loads " + selectedPath);
+            if (i < 2)
+            {
+                var authored = ConfigNode.Load(selectedPath).GetNode("GAME").GetNode("FLIGHTSTATE").GetNode("VESSEL");
+                Need(authored.GetValue("sit") == "PRELAUNCH" && authored.GetValue("landedAt") == "LaunchPad",
+                    titles[i] + " must start prelaunch at the launchpad");
+            }
             yield return new WaitForSecondsRealtime(0.5f);
             Field(dialog, "selectedGame").SetValue(dialog, selected);
             Method(dialog, "OnButtonLoad");
@@ -106,7 +113,10 @@ public sealed class ScenarioMenuProbe : MonoBehaviour
             Debug.Log($"[FAM Scenario Probe] {vessel.vesselName} {vessel.situation}, {vessel.parts.Count} parts, crew {vessel.GetVesselCrew().Count}, stage {StageManager.CurrentStage}");
             if (i < 2)
             {
-                Need(vessel.situation == Vessel.Situations.PRELAUNCH && StageManager.CurrentStage == 8 - i,
+                // KSP can change PRELAUNCH to LANDED as the stack settles on the pad.
+                bool onPad = vessel.Landed && vessel.mainBody.bodyName == "Kerbin" &&
+                             Math.Abs(vessel.latitude + 0.0972078) < 0.001 && Math.Abs(vessel.longitude + 74.5576741) < 0.001;
+                Need(onPad && StageManager.CurrentStage == 8 - i,
                     titles[i] + " needs the correct pad stage");
                 Need(vessel.GetVesselCrew().Count == i + 2, titles[i] + " has wrong crew count");
                 var engine = vessel.parts.Single(part => part.partInfo.name == engines[i]).Modules.OfType<ModuleEnginesFX>().Single();
@@ -119,7 +129,9 @@ public sealed class ScenarioMenuProbe : MonoBehaviour
                 vessel.OnFlyByWire += Throttle;
                 FlightInputHandler.state.mainThrottle = 1;
                 StageManager.ActivateNextStage();
-                yield return new WaitForSecondsRealtime(2.0f);
+                deadline = Time.realtimeSinceStartup + 15f;
+                while ((vessel.Landed || vessel.altitude <= initial + 1) && Time.realtimeSinceStartup < deadline)
+                    yield return new WaitForFixedUpdate();
                 Need(engine.EngineIgnited && !vessel.Landed && vessel.altitude > initial + 1, "No liftoff for " + titles[i]);
                 Debug.Log($"[FAM Scenario Probe] {vessel.vesselName} lifted off and climbed {vessel.altitude - initial:0.0} m.");
                 vessel.OnFlyByWire -= Throttle;

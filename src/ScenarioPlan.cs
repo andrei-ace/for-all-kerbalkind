@@ -279,7 +279,7 @@ namespace FAMSeasons
                     f => FerryParked(f) && f["habitat"].Upright && f["habitat"].Crew.Any(crew.Contains));
             else
                 Add("ferry", "Board Jamestown on EVA",
-                    $"Send {crew[1]} up the deployed stairs, board the airlock, then transfer into the habitat. Leave {crew[0]} at the LSAM controls.",
+                    $"Lower and lock the frame, turn on Lights and deploy the stairs. Send {crew[1]} through the airlock into the habitat. Leave {crew[0]} at the LSAM controls.",
                     f => FerryParked(f) && f["habitat"].Upright && f["habitat"].Crew.Contains(crew[1]) &&
                         f["ferry"].Crew.Contains(crew[0]));
         }

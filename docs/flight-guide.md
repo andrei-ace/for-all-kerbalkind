@@ -70,13 +70,15 @@ Start turning east on the first stage. As the S-IC burns out, keep the nose near
 
 Circularize at about 80 km over Kerbin before starting the transfer. During transfer, adjust the Mun encounter so the incoming path passes over a pole and the projected ground track crosses Shackleton at **77° S**. Capture retrograde near **34 km** and wait for a pass over the site. A late 90° plane change in that circular orbit costs about **746 m/s**. Use terrain altitude for final braking. Falcon's landing shelf is about **6 km above the Mun's datum**.
 
-On the delivery craft, decouple the TS-12 above the roof. Switch to the airlock, choose **Control From Here** on its Clamp-O-Tron, target the front port and translate with RCS. The airlock carries its own probe, power and monopropellant. The standalone scenario starts with the airlock already on the side. Before descent, choose **Control From Here** on the habitat’s fixed roof port and keep the stairs stowed.
+After the delivery-stage release, right-click the habitat and choose **Release roof airlock**. You can also select **Decouple** on the TS-12 between the roof and the airlock. Wait until the ring has drifted sideways past the roof port and both collars read **Ready**. This took 8–11 seconds at normal physics speed in the tested flights. Switch to the airlock, choose **Control From Here** on its Clamp-O-Tron, target the front port and translate with RCS. The airlock carries its own probe, power and monopropellant. The standalone scenario starts with the airlock already on the side. Before descent, choose **Control From Here** on the habitat’s fixed roof port and keep the stairs stowed.
+
+If an older save was made **after** the separator fired and the ships stuck together, reload that save. On the airlock’s stock Clamp-O-Tron choose **Undock**. Switch to the airlock, select **Control From Here** on its collar and translate backward with RCS until both ports read **Ready**. You can then approach a side port normally.
 
 Choose level terrain within 1.2 km of the site with room to approach the ports. Set all four footpads down within 15° of vertical with at least 100 ElectricCharge. Hold surface speed below 0.5 m/s for 30 seconds. The roof arrays and switchable fuel cell supply power.
 
 ### Jamestown expansion ports
 
-Stow the stairs. On the frame choose **Raise to expansion height**, then **Lock landing cylinders** once the legs settle. Fit a standard **Clamp-O-Tron Docking Port** to the visiting module, choose **Control From Here** on that port, match its loaded height to the base and approach face-to-face. On the habitat, **Dock rotation** opens each station's stock F-12 controls independently. The stock ports accept any roll angle.
+Stow the stairs and turn **Gear** on (default **G**) to extend all four cylinders. Once the feet settle, choose **Lock landing cylinders** on the frame. Turn Gear off to lower the outpost for boarding. The frame also has direct **Raise to expansion height** and **Lower to boarding height** controls. Fit a standard **Clamp-O-Tron Docking Port** to the visiting module, choose **Control From Here** on that port, match its loaded height to the base and approach face-to-face. On the habitat, **Dock rotation** opens each station’s F-12 controls. The ports accept any roll angle.
 
 | Interface | Season 1 dimensions |
 | --- | --- |
@@ -93,7 +95,11 @@ Four annular shrouds surround the lateral bearings and leave the docking faces c
 
 In Career, load **FAM S1 - LSAM Delivery** with at least two Kerbals. Use the Saturn upper stage to settle into a low polar orbit around **20–25 km** before releasing the ferry. In the scenario, switch to the LSAM already in orbit. Land within **200 m of Jamestown** with at least **180 LiquidFuel and 220 Oxidizer**. Burn retrograde close to the site and keep hovering brief to preserve the rescue reserve.
 
-Wait for the parking objective. On the frame choose **Lower to boarding height**, then lock the legs. With the stairs folded, roll the docked airlock until its blue window is up and its stair hinge is down. Lock the servo and choose **Deploy Stairs** on the airlock. Walk up, board at the hatch, then **Transfer Crew** from the one-seat airlock into the habitat so the checklist registers the resident. In the scenario send Danni inside and keep Tracie aboard the LSAM for the rescue.
+Wait for the parking objective. Lower and lock the frame. With the stairs folded, roll the docked airlock until its blue window is up and its stair hinge is down. Lock the servo and choose **Deploy Stairs** on the airlock. **Lights** (default **U**) switches on the frame’s landing lights and the airlock’s boarding lights. Once detached, each vessel controls and powers its own fixtures.
+
+![The same Jamestown stairway on the Kerbin launchpad with Lights off and on. All four treads are illuminated in the right-hand view.](models/ksp-jamestown-boarding-lights.jpg)
+
+Walk up, board at the hatch, then **Transfer Crew** from the one-seat airlock into the habitat so the checklist registers the resident. In the scenario send Danni inside and keep Tracie aboard the LSAM for the rescue.
 
 To leave down the stairs later, transfer a Kerbal from the hull into the docked airlock, then choose **EVA** on that Kerbal's portrait. The hull also has a separate exit.
 
@@ -128,7 +134,7 @@ The Kerbin objectives finish at safe touchdown or splashdown with the crew and a
 
 ## Season 1 flight reel
 
-Follow the N1 and Saturn V from Kerbin’s launchpad to the Mun, and see how the landers, return ships and Jamestown fit together in flight.
+Follow the N1 and Saturn V from Kerbin’s launchpad to the Mun. The Jamestown sequence shows the carrier release, the airlock separating from its roof mount, and the outpost’s boarding lights at Shackleton.
 
 <video controls playsinline preload="none" width="960" poster="season-1-in-ksp.jpg" src="season-1-in-ksp.mp4">
   <a href="season-1-in-ksp.mp4"><img src="season-1-in-ksp.jpg" alt="Play the Season 1 in-game flight reel"></a>

@@ -108,6 +108,32 @@ def triangles(root, trim_above=float("inf")):
     return vertices, faces
 
 
+def check_lamp_beams(entries, frame, airlock, floor):
+    # Cast against the flight meshes in the same poses as the released outpost.
+    obstacles = [BVHTree.FromPolygons(*triangles(obj), all_triangles=True) for _, obj in entries]
+    steps = [next(o for o in airlock.children_recursive if strip_nnn(o.name) == f"stairTread{i}")
+             for i in range(1, STAIR_TREAD_COUNT + 1)]
+    for part in (frame, airlock):
+        lamps = [obj for obj in part.children_recursive if obj.type == "LIGHT"]
+        if len(lamps) != 2 or any(obj.data.type != "SPOT" for obj in lamps):
+            raise ValueError(f"{part.name} needs two working spotlights")
+        for lamp in lamps:
+            source = lamp.matrix_world.translation
+            forward = lamp.matrix_world.to_quaternion() @ Vector((0, 0, -1))
+            if forward.z >= -0.2:
+                raise ValueError(f"{part.name} lamp points above its landing site")
+            targets = ([step.matrix_world.translation + Vector((0, 0, 0.030)) for step in steps]
+                       if part == airlock else [source + forward * ((floor - source.z) / forward.z)])
+            for target in targets:
+                ray = target - source
+                if ray.length >= lamp.data.cutoff_distance or ray.angle(forward) >= lamp.data.spot_size / 2:
+                    raise ValueError(f"{part.name} lamp misses its stair or landing footprint")
+                if any(tree.ray_cast(source, ray.normalized(), ray.length - 0.002)[0] is not None
+                       for tree in obstacles):
+                    raise ValueError(f"{part.name} lamp is obstructed on the way to {target[:]} from {source[:]}")
+    print("Boarding beams reach all four treads and both landing beams clear the full outpost.", flush=True)
+
+
 def check_jamestown(entries, packed):
     bpy.context.view_layer.update()
     frame = next(obj for piece, obj in entries if piece.name == FRAME)
@@ -187,6 +213,7 @@ def check_jamestown(entries, packed):
             raise ValueError(f"{limiting_part} has only {gap:.3f} m of fairing clearance at {height:.3f} m")
         print(f"Packed Jamestown minimum fairing clearance is {gap:.3f} m", flush=True)
     else:
+        check_lamp_beams(entries, frame, airlock, floor)
         if (hull_face.to_quaternion() @ up).dot(tunnel_face.to_quaternion() @ up) < 0.999:
             raise ValueError("The side airlock hatch is not upright")
         if structure.overlap(BVHTree.FromPolygons(*triangles(airlock), all_triangles=True)):
@@ -267,8 +294,12 @@ def build_assembly(scene, spec, stock_parts, split_parts):
             draft = split_parts / (piece.name + ".mu")
             root = load_mesh(draft) if draft.exists() else load_editable(piece.name, collection)
             for obj in root.children_recursive:
-                obj.hide_render = obj.type != "MESH" or not strip_nnn(obj.name).startswith("Exterior")
-                if not obj.hide_render:
+                obj.hide_render = obj.type != "LIGHT" and not (
+                    obj.type == "MESH" and strip_nnn(obj.name).startswith("Exterior"))
+                if strip_nnn(obj.name) == "Exterior lamp lenses":
+                    # Retain the flight shader in the editable file and show its unlit ceramic face in Workbench.
+                    obj.data.materials[0].diffuse_color = (*(c / 255 for c in PAINT["white"]), 1)
+                elif obj.type == "MESH" and not obj.hide_render:
                     painted_mesh(obj)
         root.name = piece.name
         root.location = piece.position
@@ -547,12 +578,19 @@ def save_editable(scene, entries, destination):
                 if obj.type == "MESH" and obj.hide_render:
                     obj.hide_set(True)
     bpy.data.orphans_purge(do_recursive=True)
+    # The emissive lens material retains the original atlas. Blender can keep an
+    # absolute import path when the second kit is saved in the same session.
+    for image in bpy.data.images:
+        if image.source == "FILE" and Path(image.filepath).name == "livery.png":
+            if not image.packed_file:
+                image.pack()
+            image.filepath = "//parts/livery.png"
     for screen in bpy.data.screens:
         for area in screen.areas:
             if area.type == "VIEW_3D":
                 area.spaces.active.region_3d.view_perspective = "CAMERA"
                 area.spaces.active.shading.color_type = "MATERIAL"
-    bpy.ops.wm.save_as_mainfile(filepath=str(destination), compress=True)
+    bpy.ops.wm.save_as_mainfile(filepath=str(destination), compress=True, relative_remap=False)
 
 
 def main():

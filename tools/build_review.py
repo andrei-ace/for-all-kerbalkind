@@ -169,6 +169,12 @@ def fin_config(ident, saturn):
     )
 
 
+def jamestown_lights(charge_per_second):
+    return module("ModuleLight", lightName="jamestownFlood", lightMeshRendererName="Exterior lamp lenses",
+                  useAnimationDim="False", useAutoDim="True", useResources="True",
+                  resourceAmount=charge_per_second, lightBrightenSpeed=2.5, lightDimSpeed=2.5)
+
+
 def cargo_configs():
     airlock = (
         Node(
@@ -178,7 +184,8 @@ def cargo_configs():
             author="FAM Seasons",
             title="Jamestown Dockable Airlock",
             manufacturer="Jamestown Flight Works",
-            description="A crew airlock with probe control, batteries, and monopropellant thrusters for assembly.",
+            description="A crew airlock with probe control, batteries and monopropellant thrusters for assembly. "
+                        "Two boarding lamps light the stairs.",
             category="Utility",
             subcategory=0,
             attachRules="1,0,1,1,0",
@@ -213,6 +220,7 @@ def cargo_configs():
         )
     )
     add_rcs(airlock, capacity=12, thrust=0.08)
+    airlock.child(jamestown_lights(0.02))
     adapter = part_config(CARGO)
     adapter.set("title", CARGO.title)
     adapter.children("MODEL")[0].set("model", f"{ADDON}/Parts/{CARGO.id}")
@@ -293,9 +301,11 @@ def configure(game, folder, bases):
                     (cfg.set if cfg.values(field) else cfg.add)(field, value)
                 cfg.child(module("FAMDockControls"))
             if frame:
-                cfg.set("description", "Four hydraulic leg sockets and four independent descent tank mounts.")
+                cfg.set("description", "Four hydraulic leg sockets, four independent descent tank mounts "
+                        "and two floodlights for landing.")
                 cfg.set("category", "Structural")
                 cfg.child(module("FAMBaseLift", dockingStroke=REVIEW_LIFT))
+                cfg.child(jamestown_lights(0.04))
                 node_at(cfg, "bottom", nodes["deliveryMount"], 2)
                 for i in range(1, 5):
                     node_at(cfg, f"pod{i}", nodes[f"pod{i}Mount"], 0)
@@ -407,7 +417,7 @@ def fixture_part(fixture, kind, parent, connections):
     return Piece(kind, -1, parent, (x, y, z), (-qx, -qy, -qz, w), connections=connections)
 
 
-def review_craft(original):
+def review_craft(original, *, roof_stowed_airlock=False):
     title = original.title
     ship = Craft(title, original.description, original.pieces[0].kind, original.kind)
     ship.sizing = original.pieces
@@ -482,7 +492,8 @@ def review_craft(original):
                     Piece(fin.name, -1, span.stop - 1, (px + x, py + y, pz + z), (0, -q, 0, w), surface=True)
                 )
     if habitat:
-        ports = hab_docks(packed=cargo)
+        roof_stowed = cargo or roof_stowed_airlock
+        ports = hab_docks(packed=roof_stowed)
         collar = ports.pop("collar")
         for side, fixture in ports.items():
             parent = 0
@@ -498,9 +509,9 @@ def review_craft(original):
             ship.pieces[parent].connections[socket] = len(ship.pieces)
             ship.pieces.append(fixture_part(fixture, DOCK, parent, {"bottom": parent}))
         mount = ship.pieces[0].connections["top"]
-        if not cargo:
+        if not roof_stowed:
             mount = ship.pieces[ship.pieces[0].connections["airlock"]].connections["top"]
-        if cargo:
+        if roof_stowed:
             separator = len(ship.pieces)
             ship.pieces[mount].connections["top"] = separator
             ship.pieces.append(
@@ -517,11 +528,11 @@ def review_craft(original):
         collar_index = len(ship.pieces)
         ship.pieces[mount].connections["top"] = collar_index
         ship.pieces.append(fixture_part(collar, DOCK, mount, {"top": mount, "bottom": collar_index + 1}))
-        airlock = fixture_part(airlock_piece(packed=cargo), AIRLOCK, collar_index, {"bottom": collar_index})
-        airlock.settings = (module("ModuleAnimateGeneric", isEnabled="True", animTime=0 if cargo else 1,
-                                   animSwitch=str(cargo)),)
+        airlock = fixture_part(airlock_piece(packed=roof_stowed), AIRLOCK, collar_index, {"bottom": collar_index})
+        airlock.settings = (module("ModuleAnimateGeneric", isEnabled="True", animTime=0 if roof_stowed else 1,
+                                   animSwitch=str(roof_stowed)),)
         ship.pieces.append(airlock)
-        is_outpost = not cargo
+        is_outpost = not roof_stowed
         for fixture in hab_stock_fittings():
             x, z, y = fixture.position
             w, qx, qz, qy = fixture.rotation
@@ -556,7 +567,8 @@ def review_craft(original):
     if cargo:
         ship.description = (
             "Launch the folded kit and transfer to Mun orbit. Stage to release the fairing and habitat. "
-            "Release the TS-12 above the roof port. Fly the powered airlock to the side port using its RCS. "
+            "Choose Release roof airlock on the habitat, or Decouple on the TS-12. "
+            "Let the ring clear, then fly the airlock to the front port using its RCS. "
             "Control from the habitat's roof port for powered descent."
         )
         ship.fairing = lambda: (None, cargo_fairing())

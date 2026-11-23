@@ -197,7 +197,30 @@ def check_model(cfg, root):
         model.textures and model.materials and any(hasattr(n, "shared_mesh") for n in nodes),
         f"{pid} missing visible textured geometry",
     )
-    for material in model.materials:
+    lamp_material = None
+    if pid in ("famJamestownAirlock", "famJamestownFrame"):
+        light = modules(cfg).get("ModuleLight")
+        need(light is not None, f"{pid} is missing its stock Lights action")
+        lens_name = one(light, "lightMeshRendererName")
+        lenses = [n for n in nodes if n.transform.name == lens_name and hasattr(n, "shared_mesh")]
+        need(lens_name == "Exterior lamp lenses" and len(lenses) == 1 and len(lenses[0].renderer.materials) == 1,
+             f"{pid} must have one named lens mesh for its two lights")
+        lamp_material = lenses[0].renderer.materials[0]
+        spots = [n for n in nodes if hasattr(n, "light")]
+        need(len(spots) == 2 and all(n.transform.name == one(light, "lightName") and n.light.type == 0
+             and n.light.intensity > 0 and n.light.range >= 8 for n in spots)
+             and one(light, "useResources").lower() == "true" and float(one(light, "resourceAmount")) ==
+             (0.02 if pid == "famJamestownAirlock" else 0.04), f"{pid} must power both stock spotlights")
+        need(all(lamp_material not in n.renderer.materials for n in nodes if hasattr(n, "renderer") and n != lenses[0]),
+             f"{pid} must keep the glowing material on the lenses")
+    for index, material in enumerate(model.materials):
+        if index == lamp_material:
+            need(material.shaderName == "KSP/Emissive/Diffuse" and material.name == "Jamestown LED lenses"
+                 and all(key in material.textureProperties and 0 <= material.textureProperties[key].index
+                         < len(model.textures) for key in ("_MainTex", "_Emissive"))
+                 and material.colorProperties.get("_EmissiveColor") == (0, 0, 0, 1),
+                 f"{pid} needs a working stock emissive lens material")
+            continue
         need(
             material.shaderName == "KSP/Diffuse"
             and 0 <= material.textureProperties["_MainTex"].index < len(model.textures),

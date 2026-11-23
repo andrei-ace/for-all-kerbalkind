@@ -13,6 +13,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from build_plugin import compile_csharp, managed_directory
+from build_review import review_craft
 from config import Node, read_node
 from craft import Craft, fleet
 from crew import ALEXEI, BUZZ, ELLEN, MICHAEL, NEIL
@@ -151,10 +152,20 @@ def shots():
             elevation=37,
         ),
         Shot(
+            "jamestown-airlock-release",
+            "Jamestown · Releasing the roof-stowed airlock",
+            (Start(review_craft(habitat(), roof_stowed_airlock=True), carrier.location),),
+            14,
+            action="roof-release",
+            heading=-12,
+            elevation=27,
+        ),
+        Shot(
             "jamestown-base",
-            "Jamestown · Surface habitat",
+            "Jamestown · Boarding lights at Shackleton",
             (Start(habitat(), habitat_site),),
             11,
+            action="lights",
             heading=32,
             elevation=18,
             epoch=jamestown.epoch,
@@ -373,7 +384,15 @@ def completed_take(output):
 
 
 def assemble(output, ffmpeg, retakes=()):
-    plan = completed_take(output)
+    confirmed = None
+    if retakes and not (output / "capture-complete.txt").exists() and not (output / "capture-error.txt").exists():
+        # A recorder that runs out of time can still have finished earlier shots.
+        # This line is written only after the last frame and all flight checks for a shot.
+        log = (output / "Player.log").read_text(errors="replace")
+        confirmed = set(re.findall(r"^\[FAM Preview\] Captured ([\w-]+)[ \t]*$", log, re.MULTILINE))
+        plan = read_node(output / MANIFEST).children("CAPTURE")[0]
+    else:
+        plan = completed_take(output)
     check_capture_models(output / "game")
     fps = plan.values("fps")[0]
     chosen = {shot.values("name")[0]: (shot, output) for shot in plan.children("SHOT")}
@@ -387,6 +406,10 @@ def assemble(output, ffmpeg, retakes=()):
             if name not in chosen:
                 raise ValueError(f"Unknown replacement shot {name}")
             chosen[name] = shot, directory
+    if confirmed is not None:
+        missing = [name for name, (_, directory) in chosen.items() if directory == output and name not in confirmed]
+        if missing:
+            raise RuntimeError(f"Finish or retake these interrupted shots before assembly: {', '.join(missing)}")
     stills = output / "stills"
     stills.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output) as tmp:
@@ -441,7 +464,8 @@ def assemble(output, ffmpeg, retakes=()):
                 "-filter_complex", title,
                 "-c:v",
                 "libx264",
-                "-crf", "19",
+                "-preset", "slow",
+                "-crf", "20",
                 "-pix_fmt",
                 "yuv420p",
                 "-movflags",

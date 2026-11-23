@@ -1,6 +1,6 @@
 ship = FAM S1 - Jamestown Delivery
 version = 1.12.5
-description = Launch the folded kit and transfer to Mun orbit. Stage to release the fairing and habitat. Release the TS-12 above the roof port. Fly the powered airlock to the side port using its RCS. Control from the habitat's roof port for powered descent.
+description = Launch the folded kit and transfer to Mun orbit. Stage to release the fairing and habitat. Choose Release roof airlock on the habitat, or Decouple on the TS-12. Let the ring clear, then fly the airlock to the front port using its RCS. Control from the habitat's roof port for powered descent.
 type = VAB
 size = 5.16,20.34,5.16
 steamPublishedFileId = 0

@@ -133,6 +133,16 @@ public sealed class KspPreviewCapture : MonoBehaviour
                 FlightInputHandler.state.mainThrottle = 0;
             }
             FlightDriver.SetPause(false, false);
+            ModuleDecouple roofSeparator = null;
+            if (action == "roof-release")
+            {
+                // The preceding shot shows the S-IVB and fairing release. Start this close-up on the free payload.
+                following = vessel.parts.Single(p => p.partInfo.name == "famJamestownAirlock");
+                var roofPort = vessel.rootPart.FindAttachNode("top").attachedPart;
+                roofSeparator = roofPort.FindAttachNode("top").attachedPart.FindModuleImplementing<ModuleDecouple>();
+                OrientStack(vessel);
+                FlightInputHandler.state.mainThrottle = 0;
+            }
             var ui = FindObjectOfType<UIMasterController>();
             if (ui != null)
                 ui.HideUI();
@@ -156,7 +166,7 @@ public sealed class KspPreviewCapture : MonoBehaviour
                 CheckDockingPorts(vessel, partner);
             if (sunlitSurface)
                 CheckLandingSite(vessel);
-            if (following != null)
+            if (action == "separate" || action == "unpack")
             {
                 float stageDeadline = Time.realtimeSinceStartup + 15;
                 while (!StageManager.CanSeparate && Time.realtimeSinceStartup < stageDeadline)
@@ -169,7 +179,9 @@ public sealed class KspPreviewCapture : MonoBehaviour
                 ui.HideUI();
             Debug.Log("[FAM Preview] Recording " + name);
             double startAltitude = vessel.altitude;
-            int stepsPerPicture = action == "separate" ? 4 : action == "unpack" ? 2 : 1;
+            if (action == "lights")
+                vessel.ActionGroups.SetGroup(KSPActionGroup.Light, false);
+            int stepsPerPicture = action == "separate" ? 4 : action == "unpack" || action == "roof-release" ? 2 : 1;
             for (int frame = 0; frame < frames; frame++)
             {
                 if (frame == fps / 2 && action == "launch")
@@ -182,6 +194,14 @@ public sealed class KspPreviewCapture : MonoBehaviour
                 else if ((frame == fps / 2 && action == "separate") || (frame == fps && action == "unpack"))
                 {
                     StageManager.ActivateNextStage();
+                }
+                else if (action == "lights" && frame == fps / 2)
+                {
+                    vessel.ActionGroups.SetGroup(KSPActionGroup.Light, true);
+                }
+                else if (action == "roof-release" && frame == fps / 2)
+                {
+                    roofSeparator.Events["Decouple"].Invoke();
                 }
                 // Let physically separating modules travel far enough for their mating surfaces to read.
                 for (var exposure = 0; exposure < stepsPerPicture; exposure++)
@@ -219,6 +239,25 @@ public sealed class KspPreviewCapture : MonoBehaviour
                      vessel.parts.Exists(part => part.partInfo.name == "famJamestownCargoAdapter")))
             {
                 throw new InvalidOperationException($"{name} release left stage {StageManager.CurrentStage}, shielded {vessel.rootPart.ShieldedFromAirstream}, carrier attached {following.vessel == vessel}");
+            }
+            else if (action == "roof-release")
+            {
+                if (following.vessel == vessel || roofSeparator.vessel == vessel || roofSeparator.vessel == following.vessel)
+                    throw new InvalidOperationException("The roof release kept its airlock or transport ring attached");
+                var roof = vessel.rootPart.FindAttachNode("top").attachedPart.FindModuleImplementing<ModuleDockingNode>();
+                var airlockPort = following.vessel.FindPartModulesImplementing<ModuleDockingNode>().Single();
+                float clearance = Vector3.Distance(roof.nodeTransform.position, airlockPort.nodeTransform.position);
+                if (clearance < 0.75f)
+                    throw new InvalidOperationException("The two docking faces are still within magnetic capture range");
+                Debug.Log($"[FAM Preview] Roof airlock clear, mating faces {clearance:0.00} m apart");
+            }
+            else if (action == "lights")
+            {
+                var lit = vessel.parts.Where(p => p.FindModulesImplementing<ModuleLight>().Any(lamp => lamp.isOn))
+                                      .Select(p => p.partInfo.name).ToArray();
+                if (!lit.Contains("famJamestownAirlock") || !lit.Any(p => p == "famJamestown" || p == "famJamestownFrame"))
+                    throw new InvalidOperationException("The Lights action group must illuminate the airlock and base");
+                Debug.Log("[FAM Preview] Lights illuminated " + string.Join(", ", lit));
             }
             camera.SetTargetVessel(vessel);
             Destroy(focus.gameObject);

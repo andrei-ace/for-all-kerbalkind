@@ -17,6 +17,15 @@ namespace FAMSeasons
         [KSPEvent(guiActive = true, guiName = "Raise to expansion height")]
         public void RaiseToDock() { SetStroke(dockingStroke); }
 
+        [KSPAction("Extend / retract landing cylinders", KSPActionGroup.Gear)]
+        public void SetLandingGear(KSPActionParam action)
+        {
+            bool extend = action.type == KSPActionType.Activate;
+            if (action.type == KSPActionType.Toggle)
+                extend = (Legs()[0]?.targetExtension ?? 0f) < dockingStroke * 0.5f;
+            SetStroke(extend ? dockingStroke : 0f);
+        }
+
         [KSPEvent(guiActive = true, guiName = "Lock landing cylinders")]
         public void LockFeet()
         {

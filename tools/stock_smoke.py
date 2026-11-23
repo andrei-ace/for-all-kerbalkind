@@ -35,7 +35,7 @@ def run(game, payload, dotnet):
             host = work / "stock-mono"
             # KSP 1.12.5 for macOS ships an Intel Mono runtime.
             subprocess.run(
-                ["clang", "-arch", "x86_64", ROOT / "tools/mono_host.c", "-o", host],
+                ["clang", "-arch", "x86_64", "-Wl,-adhoc_codesign", ROOT / "tools/mono_host.c", "-o", host],
                 check=True,
             )
             command = [host, runtime]

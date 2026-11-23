@@ -1169,6 +1169,12 @@ GAME
                     isEnabled = True
                     stagingEnabled = True
                 }
+                MODULE
+                {
+                    name = ModuleLight
+                    isEnabled = True
+                    stagingEnabled = True
+                }
             }
             PART
             {
@@ -2757,6 +2763,12 @@ GAME
                     name = ModuleRCSFX
                     isEnabled = True
                     stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = ModuleLight
+                    isEnabled = True
+                    stagingEnabled = True
                 }
                 RESOURCE
                 {

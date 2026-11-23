@@ -28,10 +28,10 @@ The Phase 1 floor plan gives Jamestown a circular pressure room, four straight-s
 | Part | Role |
 | --- | --- |
 | Habitat | Four crew seats, probe control, power, service and roof hatches, four lateral port mounts and a fixed roof port mount |
-| Dockable airlock | One seat, probe core, 75 EC, reaction wheel, 12 units of monopropellant, four RCS clusters, hatch sill and folding stairs |
+| Dockable airlock | One seat, probe core, 75 EC, reaction wheel, 12 units of monopropellant, four RCS clusters, folding stairs and two boarding lights |
 | Six stock Clamp-O-Trons | One per lateral cabin face, one on the roof and one on the airlock |
 | Four Breaking Ground F-12 rotation servos | One per lateral station, turning the stock Clamp-O-Tron and its docked module around the tunnel axis. Original hollow shrouds cover the bearings and port barrels |
-| Landing frame | Four braced cylinder seats, four descent-tank sockets and a central delivery mount |
+| Landing frame | Four braced cylinder seats, four descent-tank sockets, a central delivery mount and two landing lights |
 | Four Breaking Ground 1P2 hydraulic cylinders | Each moving piston carries an individual Jamestown footpad |
 | Four Jamestown descent tanks and stock Sparks | One tank per engine at 88% fill. Four 35% thrust limiters give 28 kN in vacuum |
 
@@ -48,7 +48,9 @@ The hinge, four tread colliders, threshold and ground shoe travel with the airlo
 
 1. On landing, select **Lower to boarding height** on the structural frame. It commands the four attached 1P2 cylinders together. Let them settle and select **Lock landing cylinders**. Each cylinder also has its stock controls for individual trim.
 2. With the stairs stowed, right-click the habitat, open **Dock rotation** and select the servo for the occupied station. Unlock its **F-12** and adjust **Target Angle** until the airlock's blue window is up and the hinge is down. The supplied outpost starts upright at **0°**. Lock the servo, then choose **Deploy Stairs** on the airlock. Each station has direct controls and works without a KAL-1000.
-3. For expansion, stow the steps and select **Raise to expansion height** on the frame. Lock the four legs after they reach their commanded positions. Bring the visiting module up to a free end port. Lower again for boarding after the joined bases have compatible ground support.
+3. For expansion, stow the steps and turn **Gear** on (default **G**) or select **Raise to expansion height** on the frame. Lock the four legs once they settle. Bring the visiting module up to a free port. When both modules have compatible ground support, turn Gear off to lower the outpost for boarding.
+
+**Lights** (default **U**) switches both pairs of lamps together while docked. The frame lights illuminate the landing area and draw 0.04 EC/s per pair. The airlock’s boarding lights draw 0.02 EC/s per pair and travel with the stairs. [Boarding lights off and on in KSP](models/ksp-jamestown-boarding-lights.jpg)
 
 For a stairway EVA, use **Transfer Crew** to put one Kerbal into the docked airlock, then select **EVA** on that crew portrait. On return, board at the outer hatch and transfer the Kerbal back into the habitat. The campaign checks the habitat seats for residents and the rescued crew member. The hull has its own independent exit.
 
@@ -56,7 +58,7 @@ The east and west docking faces are at **X ±2.38 m, Y −0.15 m, Z 0 m** in hab
 
 KSP measured the 37-part uncrewed outpost at **6.594 t** with **1.76 t** of descent propellant. At this fill the four Sparks yield **974 m/s** of calculated vacuum delta-v and **2.61 Mun TWR**. The estimate includes powered robotics and KSP's mass adjustment for empty seats.
 
-On the level Kerbin launchpad the port measured **1.82 m** for boarding and **2.58 m** when raised. Each cylinder travelled **0.747–0.749 m**, locked, and lowered again. KSP rotated all four stations independently, rolled the attached airlock through 60° and back, and registered all four stair treads. A Kerbal exited and reboarded through both the habitat and detachable airlock. A separate stock Clamp-O-Tron docked to the raised east station after the fixture aligned it for final approach.
+On the level Kerbin launchpad the port measured **1.82 m** for boarding and **2.58 m** when raised. Each cylinder travelled **0.747–0.749 m**, locked, and lowered again. KSP rotated all four stations independently, rolled the attached airlock through 60° and back, and registered all four stair treads. A Kerbal exited and reboarded through both the habitat and detachable airlock. After a quickload, the locked east port settled to **2.499 m** under load. A separate stock Clamp-O-Tron approaching at the nominal **2.600 m** height still made a docking connection.
 
 ### Packing and orbital assembly
 
@@ -64,7 +66,9 @@ On the level Kerbin launchpad the port measured **1.82 m** for boarding and **2.
 
 The stowed airlock rides on a stock TS-12 above the roof port. The jacks retract, the stairs fold against the hatch, and the panels and relay fold inward. The 32-sided fairing reaches **5.16 m** across the landing gear. Its upper panels taper to a **3.20 m** shoulder around the roof airlock, then close with a **1.14 m** conical cap. The last panel ring is **7.10 m** above the fairing pivot. Blender measured **58 mm** of minimum clearance around the packed hardware. [Editable packed assembly](../art/season-1/modular/jamestown-packed.blend)
 
-After fairing and payload release, decouple the roof TS-12. Switch to the powered airlock, use **Control from Here** on its Clamp-O-Tron and target the front collar. Translate with RCS. Use the gold marks for an initial upright roll. The stock ports accept a visitor at any roll angle. The F-12 can then align the stairs with the ground. Use the habitat roof port as the control point for descent.
+After fairing and payload release, choose **Release roof airlock** on the habitat or **Decouple** on the TS-12. When the ring clears the two collars, switch to the powered airlock, choose **Control From Here** on its Clamp-O-Tron and target the front port. Translate with RCS and use the gold marks for an initial upright roll. The stock ports accept any roll angle. After docking, the F-12 can align the stairs with the ground. Use the habitat roof port as the control point for descent.
+
+In KSP, the fresh delivery cleared its ring in **8.0 seconds**. A packed orbital save made before the fix cleared in **10.4 seconds** at its saved 5% ejection setting. In both flights the airlock fired its own RCS, docked to the front station, undocked, and docked again on the roof.
 
 ## Launch vehicles
 

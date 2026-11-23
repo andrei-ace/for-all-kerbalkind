@@ -1,6 +1,7 @@
 // Compile only into a disposable KSP test installation. The test uses its named Sandbox start.sfs.
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Expansions.Serenity;
@@ -17,6 +18,9 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
         if (!condition) throw new InvalidOperationException(message);
         Debug.Log(Tag + message);
     }
+
+    static string Strokes(IEnumerable<ModuleRoboticServoPiston> legs) =>
+        string.Join(", ", legs.Select(p => p.currentExtension.ToString("F3")));
 
     IEnumerator Start()
     {
@@ -61,6 +65,9 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
                 var stairs = module.FindModuleImplementing<ModuleAnimateGeneric>();
                 Verify(Math.Abs(stairs.animTime - (path == outpost ? 1 : 0)) < 0.001f,
                        "Airlock stair pose matches " + Path.GetFileName(path));
+                var frame = build.parts.Single(p => p.partInfo.name == "famJamestownFrame").FindModuleImplementing<FAMBaseLift>();
+                Verify((frame.Actions["SetLandingGear"].actionGroup & KSPActionGroup.Gear) != 0,
+                       "Gear controls the landing frame in " + Path.GetFileName(path));
             }
             build.Clear();
         }
@@ -107,9 +114,20 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
         var feet = vessel.parts.Where(p => p.partInfo.name == "famJamestownFootpad").ToArray();
         var legs = vessel.FindPartModulesImplementing<ModuleRoboticServoPiston>();
         Verify(shoe != null && feet.Length == 4 && legs.Count == 4, "Four hydraulic legs and a solid stair shoe");
-        Func<float> portHeight = () => feet.Average(foot =>
-            Vector3.Dot(port.nodeTransform.position - foot.transform.position, hull.transform.up)) + 0.10f;
+        bool launchGear = vessel.ActionGroups[KSPActionGroup.Gear];
+        Verify(!launchGear && legs.All(p => p.servoIsLocked && Math.Abs(p.targetExtension) < 0.001f),
+               $"Launch Gear = {launchGear}, four locked boarding targets at zero, measured strokes {Strokes(legs)} m");
+        Func<Part, float> heightFromFoot = foot =>
+            Vector3.Dot(port.nodeTransform.position - foot.transform.position, hull.transform.up) + 0.10f;
+        Func<float> portHeight = () => feet.Average(heightFromFoot);
         float boarding = portHeight();
+        var boardingFeet = feet.ToDictionary(p => p.persistentId, heightFromFoot);
+        // A retracted 1P2 can report a negative stroke when its joint compresses under Kerbin gravity.
+        // Check the zero targets and measure the position of each actual shoe relative to the cabin.
+        Func<bool> atBoarding = () => legs.Count == 4 && feet.Length == 4 &&
+            legs.All(p => Math.Abs(p.targetExtension) < 0.001f && p.currentExtension < 0.025f) &&
+            feet.All(p => Math.Abs(heightFromFoot(p) - boardingFeet[p.persistentId]) < 0.05f) &&
+            Math.Abs(portHeight() - boarding) < 0.035f;
         var shoeBottom = shoe.transform.TransformPoint(shoe.center) - hull.transform.up * 0.015f;
         float toeGap = feet.Average(foot => Vector3.Dot(shoeBottom - foot.transform.position, hull.transform.up)) + 0.10f;
         Debug.Log(Tag + $"Airlock KSP scale {airlock.rescaleFactor} model {hinge.lossyScale}, hull-local " +
@@ -127,6 +145,8 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
             Verify(contact != null && contact.Raycast(new Ray(step.position + hull.transform.up * 0.15f,
                    -hull.transform.up), out RaycastHit hit, 0.25f), "Physical upper face of stair " + i);
         }
+        var lights = JamestownLightFlightTest.Check(airlock);
+        while (lights.MoveNext()) yield return lights.Current;
 
         var astronaut = HighLogic.CurrentGame.CrewRoster.GetNewKerbal(ProtoCrewMember.KerbalType.Crew);
         Verify(hull.AddCrewmember(astronaut), "Crew assigned to the habitat");
@@ -179,19 +199,53 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
         var upright = Quaternion.Inverse(hull.transform.rotation) * airlock.transform.rotation;
         Verify(Quaternion.Angle(level, upright) < 2, "Servo returned the stair hinge to the boarding orientation");
 
-        lift.RaiseToDock();
+        vessel.ActionGroups.ToggleGroup(KSPActionGroup.Gear);
         yield return new WaitForSeconds(19);
         float raised = portHeight();
-        string strokes = string.Join(", ", legs.Select(p => p.currentExtension.ToString("F3")));
-        Verify(legs.All(p => Math.Abs(p.currentExtension - 0.75f) < 0.025) && Math.Abs(raised - 2.60f) < 0.04f,
-               $"Expansion port {raised:F3} m, four measured strokes {strokes} m");
+        Verify(vessel.ActionGroups[KSPActionGroup.Gear] && legs.All(p => Math.Abs(p.currentExtension - 0.75f) < 0.025) &&
+               Math.Abs(raised - 2.60f) < 0.04f, $"Gear on raised the expansion port to {raised:F3} m, four strokes {Strokes(legs)} m");
         lift.LockFeet();
         yield return new WaitForSeconds(1);
         Verify(legs.All(p => p.servoIsLocked), "All four cylinders locked at expansion height");
-        // Use a separate stock Clamp-O-Tron as a movable test article. Supply alignment
-        // only. The stock docking FSM must acquire it and merge the two vessels.
+        var assembled = hull.vessel;
+        var assembledId = assembled.id;
+        var savedTargets = legs.ToDictionary(p => p.part.persistentId, p => p.targetExtension);
+        Debug.Log(Tag + $"Saving the locked expansion port at {portHeight():F3} m with strokes {Strokes(legs)} m");
+        var expanded = HighLogic.CurrentGame.Updated(GameScenes.FLIGHT);
+        expanded.startScene = GameScenes.FLIGHT;
+        GamePersistence.SaveGame(expanded, "gear-expanded", saveName, SaveMode.OVERWRITE);
+        assembled.ActionGroups.ToggleGroup(KSPActionGroup.Gear);
+        yield return new WaitForSeconds(13);
+        lift.LockFeet();
+        stairsModule.Toggle();
+        yield return new WaitForSeconds(3);
+        Verify(!assembled.ActionGroups[KSPActionGroup.Gear] && atBoarding() && Quaternion.Angle(open, hinge.localRotation) < 0.3f &&
+               assembled.parts.Count == 37 && !assembled.packed,
+               $"Gear off returned the port to {portHeight():F3} m with stairs deployed and strokes {Strokes(legs)} m");
+
+        // Invoke the same load pipeline as F9 and the stock named-load dialog.
+        var quickLoad = typeof(QuickSaveLoad).GetMethod("quickLoad", System.Reflection.BindingFlags.Instance |
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+        quickLoad.Invoke(QuickSaveLoad.fetch, new object[] { "gear-expanded", saveName });
+        deadline = Time.realtimeSinceStartup + 65;
+        while (!HighLogic.LoadedSceneIsFlight || !FlightGlobals.ready || FlightGlobals.ActiveVessel == null ||
+               ReferenceEquals(FlightGlobals.ActiveVessel, assembled) || FlightGlobals.ActiveVessel.id != assembledId ||
+               FlightGlobals.ActiveVessel.packed)
+        {
+            if (Time.realtimeSinceStartup > deadline) throw new TimeoutException("Reloading the expanded outpost");
+            yield return null;
+        }
+        yield return new WaitForSeconds(2);
+        vessel = FlightGlobals.ActiveVessel;
+        legs = vessel.FindPartModulesImplementing<ModuleRoboticServoPiston>();
+        hull = vessel.parts.Single(p => p.partInfo.name == "famJamestown");
+        feet = vessel.parts.Where(p => p.partInfo.name == "famJamestownFootpad").ToArray();
+        port = hull.FindAttachNode("airlock").attachedPart.FindAttachNode("top").attachedPart.FindModuleImplementing<ModuleDockingNode>();
+        Verify(vessel.ActionGroups[KSPActionGroup.Gear] && legs.Count == 4 &&
+               legs.All(p => p.servoIsLocked && Math.Abs(p.targetExtension - savedTargets[p.part.persistentId]) < 0.001f),
+               $"F9 restored Gear on and all four locked extension targets. Port {portHeight():F3} m, strokes {Strokes(legs)} m");
+        var expansion = hull.FindAttachNode("east").attachedPart.FindAttachNode("top").attachedPart.FindModuleImplementing<ModuleDockingNode>();
         var visitorPort = hull.FindAttachNode("top").attachedPart.FindModuleImplementing<ModuleDockingNode>();
-        var expansion = collars[1];
         visitorPort.part.decouple(0f);
         yield return new WaitForFixedUpdate();
         var visitor = visitorPort.part.vessel;
@@ -199,29 +253,53 @@ public sealed class JamestownRoboticsFlightTest : MonoBehaviour
         GameEvents.onVesselWasModified.Fire(visitor);
         GameEvents.onVesselWasModified.Fire(hull.vessel);
         var target = expansion.nodeTransform;
-        for (int tick = 0; tick < 150 && visitorPort.part.vessel != hull.vessel; tick++)
+        var up = hull.transform.up;
+        float dockHeight = feet.Average(f => Vector3.Dot(target.position - f.transform.position, up)) + 0.10f;
+        const float visitorHeight = 2.60f;
+        // Carry the test port horizontally at the documented height. Once the stock magnets
+        // acquire it, stop positioning it and let the two stock ports close the remaining gap.
+        bool acquired = false;
+        for (int tick = 0; tick < 250 && visitorPort.part.vessel != hull.vessel; tick++)
         {
-            var guest = visitorPort.nodeTransform;
-            var align = Quaternion.LookRotation(-target.forward, target.up) * Quaternion.Inverse(guest.rotation);
-            visitor.SetRotation(align * visitor.transform.rotation, false);
-            visitor.Translate((Vector3d)(target.position + target.forward * 0.045f - guest.position));
-            visitorPort.part.rb.velocity = expansion.part.rb.velocity;
-            visitorPort.part.rb.angularVelocity = expansion.part.rb.angularVelocity;
-            Physics.SyncTransforms();
+            acquired |= visitorPort.state.StartsWith("Acquire", StringComparison.Ordinal) ||
+                        expansion.state.StartsWith("Acquire", StringComparison.Ordinal);
+            if (!acquired)
+            {
+                var guest = visitorPort.nodeTransform;
+                var align = Quaternion.LookRotation(-target.forward, target.up) * Quaternion.Inverse(guest.rotation);
+                visitor.SetRotation(align * visitor.transform.rotation, false);
+                float gap = Mathf.Max(0.045f, 0.38f - tick * 0.007f);
+                visitor.Translate((Vector3d)(target.position + target.forward * gap + up * (visitorHeight - dockHeight) - guest.position));
+                visitorPort.part.rb.velocity = expansion.part.rb.velocity - target.forward * 0.1f;
+                visitorPort.part.rb.angularVelocity = expansion.part.rb.angularVelocity;
+                Physics.SyncTransforms();
+            }
+            else
+            {
+                // Support the loose test port's weight, as a level visiting module would.
+                visitorPort.part.rb.AddForce(-(Vector3)FlightGlobals.getGeeForceAtPosition(visitorPort.part.transform.position), ForceMode.Acceleration);
+            }
             yield return new WaitForFixedUpdate();
         }
         yield return new WaitForSeconds(1.5f);
-        Verify(visitorPort.part.vessel == hull.vessel && expansion.otherNode == visitorPort
-               && expansion.state.StartsWith("Docked", StringComparison.Ordinal),
-               $"Stock size1 port captured the raised east expansion dock on level ground ({expansion.state})");
+        Verify(visitorPort.part.vessel == hull.vessel && expansion.otherNode == visitorPort &&
+               expansion.state.StartsWith("Docked", StringComparison.Ordinal),
+               $"After F9 a stock port arriving at {visitorHeight:F3} m captured the {dockHeight:F3} m east dock ({expansion.state})");
+        vessel = hull.vessel;
+        Verify(vessel.ActionGroups[KSPActionGroup.Gear], "Gear stays on after expansion docking");
+        var extendedFeet = feet.ToDictionary(f => f.persistentId, heightFromFoot);
+        lift = vessel.FindPartModuleImplementing<FAMBaseLift>();
         lift.LowerToBoard();
+        Verify(legs.All(p => !p.servoIsLocked && Math.Abs(p.targetExtension) < 0.001f),
+               "The frame's manual boarding command unlocks and retracts its own four cylinders");
+        lift.RaiseToDock();
+        Verify(legs.All(p => Math.Abs(p.targetExtension - 0.75f) < 0.001f),
+               "The frame's manual expansion command restores the four extension targets");
+        vessel.ActionGroups.ToggleGroup(KSPActionGroup.Gear);
         yield return new WaitForSeconds(13);
-        lift.LockFeet();
-        stairsModule.Toggle();
-        yield return new WaitForSeconds(3);
-        Verify(Math.Abs(portHeight() - boarding) < 0.03 && Quaternion.Angle(open, hinge.localRotation) < 0.3f
-               && vessel.parts.Count == 37 && !vessel.packed,
-               $"Landed base recovered its {portHeight():F3} m boarding height and deployed stairs");
+        Verify(!vessel.ActionGroups[KSPActionGroup.Gear] && legs.All(p => Math.Abs(p.targetExtension) < 0.001f &&
+               p.currentExtension < 0.025f) && feet.All(f => extendedFeet[f.persistentId] - heightFromFoot(f) > 0.50f),
+               $"First Gear press after reloading returned the port to {portHeight():F3} m with strokes {Strokes(legs)} m");
     }
 
     static void SetAngle(ModuleRoboticRotationServo servo, float value)

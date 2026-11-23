@@ -35,7 +35,7 @@ def prepare(game, sandbox_save, output, dotnet):
     compile_csharp(clone, dotnet, ROOT / "tools/JamestownRoboticsFlightTest.cs", plugin, "library", [
         managed / "UnityEngine.PhysicsModule.dll", managed / "UnityEngine.AnimationModule.dll",
         clone / "GameData/FAMSeasons/Plugins/FAMSeasons.dll",
-    ])
+    ], extra_sources=[ROOT / "tools/JamestownLightFlightTest.cs"])
     return clone
 
 

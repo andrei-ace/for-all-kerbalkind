@@ -41,7 +41,7 @@ The 47 custom parts unlock across six new research nodes. Apollo 11 awards enoug
 
 ![Blender review of modular Jamestown with a side airlock, four landing pads, and separate exposed tanks and stock Sparks](docs/models/jamestown-assembled.jpg)
 
-Jamestown's four shrouded lateral Clamp-O-Trons each turn on a Breaking Ground F-12. The detachable airlock carries its own folding stairs. For a stairway EVA, lower the base, roll the airlock upright, deploy the stairs and transfer one Kerbal into its seat. Four hydraulic cylinders raise the ports from a nominal 1.85 m boarding height to a 2.60 m expansion height. [Model review, packing cutaway and flight controls](docs/season-1-model-review.md#jamestown)
+After jettisoning the delivery fairing, choose **Release roof airlock** on the habitat. The airlock carries its own folding stairs and boarding lights. Dock it at any of the four side ports and use that port’s F-12 servo to roll the stairs upright. **Gear** (default **G**) extends the four hydraulic legs for base expansion or retracts them for boarding. **Lights** (default **U**) switches the landing and stair lights. For a stairway EVA, lower the base, deploy the stairs and transfer a Kerbal into the airlock. [Model review, packing cutaway and flight controls](docs/season-1-model-review.md#jamestown)
 
 ## Standalone scenarios
 
@@ -125,7 +125,7 @@ python3 tools/render_scenarios.py --list-shots
 python3 tools/render_scenarios.py --ksp-root "/path/to/Kerbal Space Program" --output "/path/to/new capture folder"
 ```
 
-Use `--shot <name>` to select an individual scene. The output folder holds the raw frames, `stills/`, and `season-1-in-ksp.mp4`.
+Use `--shot <name>` to record an individual scene. To replace it in the full reel, run `--assemble --output <original-folder> --retake <completed-shot-folder>`. Each retained scene must have completed its flight checks. The output folder holds the raw frames, `stills/`, and `season-1-in-ksp.mp4`.
 
 ## Credits
 
@@ -135,6 +135,6 @@ Use `--shot <name>` to select an individual scene. The output folder holds the r
 - The Season 4 roadmap references the show's Art Directors Guild submission, which credits Seth Reed for production design, Ellen King for supervising art direction, and Kimberly Wannop for set decoration. [Season 4 design submission](https://assets.adg.org/media/submissions/2023-10-30_21-10-15/FAM_ADG_14mb.pdf)
 - The Saturn V and Apollo parts depict hardware from NASA's Apollo program. The N1-L3 parts depict the Soviet lunar program chronicled by engineer Boris Chertok. [NASA's Apollo program history](https://www.nasa.gov/the-apollo-program/) · [Chertok's *Rockets and People, Volume IV*](https://www.nasa.gov/wp-content/uploads/2023/04/sp-4110-vol4.pdf)
 - The exterior meshes and livery were made for this fan mod. The craft and captures reference stock assets from Squad's *Kerbal Space Program*. The part files credit NovaSilisko for the Mk2-R parachute, OX-STAT, ladder, girders, and Z-100 battery, Squad for the Communotron 16-S and rover wheels, AlexanderM for the Clamp-O-Tron and Probodobodyne QBE, and Porkjet for the Mk1 Crew Cabin. The game also supplies the cockpit interiors, engine effects, and fairing textures. [Kerbal Space Program credits on Steam](https://store.steampowered.com/app/220200/Kerbal_Space_Program/)
-- Jamestown uses the stock 48-7S Spark, the Breaking Ground F-12 servo and 1P2 cylinder by RoverDude, and the stock Clamp-O-Tron by AlexanderM. The airlock, stair flight, shrouds, descent tanks, frame and footpads are original mod meshes. The editable assemblies store stock and DLC attachment references. [Kerbal Space Program credits on Steam](https://store.steampowered.com/app/220200/Kerbal_Space_Program/)
+- Jamestown uses the stock 48-7S Spark, the Breaking Ground F-12 servo and 1P2 cylinder by RoverDude, and the stock Clamp-O-Tron by AlexanderM. The airlock, stair flight, shrouds, descent tanks, frame, footpads and light fixtures are original mod meshes. The fixtures use KSP’s stock lighting system. The editable assemblies store stock and DLC attachment references. [Kerbal Space Program credits on Steam](https://store.steampowered.com/app/220200/Kerbal_Space_Program/)
 - The Blender workflow uses Bill Currie's `io_object_mu` add-on. The source checkout includes its standalone `mu.py` codec under GPL-2.0-or-later, with the license and upstream notice in `tools/vendor/`. [Pinned add-on revision](https://github.com/taniwha/io_object_mu/tree/ff04234928b2e66f92d2d1325225e9a29f0b415c)
 - ModuleManager was created by Ialdabaoth and is maintained by sarbian and contributors. Contract Configurator was created by Jeremie Rossignol (nightingale) and is maintained by KSP-RO and contributors. Harmony for KSP is distributed by KSP Modding Libraries and uses Andreas Pardeike's Harmony library. [ModuleManager](https://github.com/sarbian/ModuleManager) · [Contract Configurator](https://github.com/KSP-RO/ContractConfigurator) · [Harmony for KSP](https://github.com/KSPModdingLibs/HarmonyKSP) · [Harmony](https://github.com/pardeike/Harmony)
