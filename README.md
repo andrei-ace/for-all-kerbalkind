@@ -12,15 +12,13 @@ After installation, choose **Start Game → Scenarios → Red Mun** to begin on 
 
 Watch the Soviet and American flights in KSP, from liftoff on Kerbin to a crewed outpost on the Mun.
 
-<video controls playsinline preload="none" width="960" poster="docs/season-1-in-ksp.jpg" src="docs/season-1-in-ksp.mp4">
-  <a href="docs/season-1-in-ksp.mp4"><img src="docs/season-1-in-ksp.jpg" alt="Play the Season 1 in-game flight reel"></a>
-</video>
+[![Watch The Race to the Mun, the For All Kerbalkind Season 1 trailer, on YouTube](https://i.ytimg.com/vi/cf8Nhy6frKE/maxresdefault.jpg)](https://www.youtube.com/watch?v=cf8Nhy6frKE)
 
-[Play the Season 1 reel (MP4)](docs/season-1-in-ksp.mp4) · [Jamestown in daylight](docs/jamestown-on-the-mun.jpg) · [Flight guide](docs/flight-guide.md)
+[Watch the 44-second trailer on YouTube](https://www.youtube.com/watch?v=cf8Nhy6frKE) · [How we built the mod and filmed the trailer](docs/how-season-1-was-made.md) · [Flight guide](docs/flight-guide.md) · [Jamestown in daylight](docs/jamestown-on-the-mun.jpg)
 
 ## Install and start
 
-1. Enable the **Breaking Ground** expansion for Jamestown's servos and hydraulic landing gear. Install ModuleManager, Contract Configurator and its Harmony dependency for Career. The release was tested with ModuleManager 4.2.3 and Contract Configurator 2.14.0. [ModuleManager](https://github.com/sarbian/ModuleManager/releases) · [Contract Configurator](https://github.com/KSP-RO/ContractConfigurator/releases) · [Harmony for KSP](https://github.com/KSPModdingLibs/HarmonyKSP/releases)
+1. Enable the **Breaking Ground** expansion for Jamestown's servos and hydraulic landing gear. Install ModuleManager, Contract Configurator and its Harmony dependency alongside For All Kerbalkind. The release was tested with ModuleManager 4.2.3 and Contract Configurator 2.14.0. [ModuleManager](https://github.com/sarbian/ModuleManager/releases) · [Contract Configurator](https://github.com/KSP-RO/ContractConfigurator/releases) · [Harmony for KSP](https://github.com/KSPModdingLibs/HarmonyKSP/releases)
 2. Download `FAMSeasons.zip` from the release you want. Unzip it into the folder that contains KSP and merge `GameData`, `Ships`, and `saves/scenarios`. The base game supplies the recovery parachutes, cabin interiors and engine effects. [GitHub Releases](https://github.com/andrei-ace/for-all-kerbalkind/releases)
 3. In Sandbox, enter the VAB and select **Load**. Search for **FAM S1**. Choose **Jamestown Outpost** to inspect the landed assembly or **Jamestown Delivery** to fly its Saturn V. If a save hides stock craft, copy the six `.craft` files from `Ships/VAB` into `saves/<your save>/Ships/VAB`.
 4. In Career, start with stock **Heavy Rocketry** and **Survivability**, then **Mun Launch Vehicles** and **Soviet L3 Landing System**. Upgrade the Launch Pad and Astronaut Complex to level 2. Mission Control offers **Red Mun → Apollo 11 → Jamestown Campaign** as you complete each predecessor and unlock every part on the supplied mission craft. Purchase individual parts when your difficulty settings require it. Science mode uses the same research tree.
@@ -105,7 +103,7 @@ FAM_KSP_ROOT="/path/to/isolated KSP" ./dist/"For All Kerbalkind.command" --insta
 
 On macOS, the launcher installs the archive into the specified game. To open the launcher from Finder, save the absolute path to your isolated KSP folder on one line in `dist/.ksp-root`.
 
-The .NET SDK and a game installation containing the dependencies also support rebuilding the habitat parameter and testing the release with KSP's configuration reader. On macOS the test uses the game's bundled Mono runtime and Command Line Tools. On Linux install Mono for the test runner.
+The .NET SDK compiles the gameplay plug-in against the assemblies in your KSP installation. KSP runs the compiled plug-in with Unity's Mono runtime. The stock smoke test uses the game's configuration reader. On macOS it uses the bundled Mono runtime and Command Line Tools. On Linux install Mono for the test runner.
 
 ```sh
 python3 tools/build_plugin.py --ksp-root "/path/to/Kerbal Space Program"

@@ -136,11 +136,9 @@ The Kerbin objectives finish at safe touchdown or splashdown with the crew and a
 
 Follow the N1 and Saturn V from Kerbin’s launchpad to the Mun. The Jamestown sequence shows the carrier release, the airlock separating from its roof mount, and the outpost’s boarding lights at Shackleton.
 
-<video controls playsinline preload="none" width="960" poster="season-1-in-ksp.jpg" src="season-1-in-ksp.mp4">
-  <a href="season-1-in-ksp.mp4"><img src="season-1-in-ksp.jpg" alt="Play the Season 1 in-game flight reel"></a>
-</video>
+[![Watch the Season 1 flight reel on YouTube](season-1-in-ksp.jpg)](https://www.youtube.com/watch?v=cf8Nhy6frKE)
 
-[Play the in-game reel (MP4)](season-1-in-ksp.mp4) · [View the poster](season-1-in-ksp.jpg) · [Columbia and Eagle close-ups](season-1-model-review.md#apollo-csm-and-lunar-module)
+[Watch the flight reel on YouTube](https://www.youtube.com/watch?v=cf8Nhy6frKE) · [View the poster](season-1-in-ksp.jpg) · [Columbia and Eagle close-ups](season-1-model-review.md#apollo-csm-and-lunar-module)
 
 ## Fuel margins
 

@@ -4,7 +4,7 @@ These are the modular ships supplied in Season 1. Each assembly has separate edi
 
 ![Season 1 launch vehicles, lunar spacecraft and Jamestown](season-1-fleet.png)
 
-[Watch the flights in KSP (MP4)](season-1-in-ksp.mp4) · [In-game poster](season-1-in-ksp.jpg) · [Animated mission intro](season-1-scenarios.gif)
+[Watch the Season 1 flights on YouTube](https://www.youtube.com/watch?v=cf8Nhy6frKE) · [In-game poster](season-1-in-ksp.jpg) · [Animated mission intro](season-1-scenarios.gif)
 
 ## Review in KSP Sandbox
 

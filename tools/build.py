@@ -49,6 +49,7 @@ def package(game, dist=ROOT / "dist"):
         + [
             ROOT / "README.md",
             ROOT / "docs/flight-guide.md",
+            ROOT / "docs/how-season-1-was-made.md",
             ROOT / "docs/season-1-model-review.md",
             ROOT / "docs/season-1-fleet.png",
             ROOT / "docs/season-1-scenarios.gif",
