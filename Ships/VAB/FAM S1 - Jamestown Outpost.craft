@@ -1,0 +1,2045 @@
+ship = FAM S1 - Jamestown Outpost
+version = 1.12.5
+description = The modular habitat and descent kit ready for inspection.
+type = VAB
+size = 4.32,4.1,4.32
+steamPublishedFileId = 0
+persistentId = 1364865554
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Base
+PART
+{
+    part = famJamestown_3309267511
+    partName = Part
+    persistentId = 2513159221
+    pos = 0,3.75,0
+    attPos = 0,0,0
+    attPos0 = 0,3.75,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownFrame_2990037665
+    link = rotoServo.02_1533279287
+    link = rotoServo.02_2123704262
+    link = dockingPort2_2426095338
+    link = rotoServo.02_3885790844
+    link = rotoServo.02_251646793
+    link = solarPanels3_122265442
+    link = solarPanels4_1737365127
+    link = solarPanels3_277423633
+    link = solarPanels3_2306897835
+    link = solarPanels4_4270278461
+    link = solarPanels3_1625543326
+    link = HighGainAntenna5.v2_400876040
+    link = ladder1_2397942706
+    attN = bottom,famJamestownFrame_2990037665_0|-1.35|0
+    attN = west,rotoServo.02_1533279287_-1.87916|-0.15|0
+    attN = east,rotoServo.02_2123704262_1.87916|-0.15|0
+    attN = top,dockingPort2_2426095338_0|0.8|0
+    attN = rear,rotoServo.02_3885790844_0|-0.15|1.58104
+    attN = airlock,rotoServo.02_251646793_0|-0.15|-1.515
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 2200
+        maxAmount = 2200
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 18
+        maxAmount = 18
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famJamestownFrame_2990037665
+    partName = Part
+    persistentId = 708297360
+    pos = 0,1.7,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.05,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownDescentTank_724634395
+    link = famJamestownDescentTank_3260198446
+    link = famJamestownDescentTank_744279810
+    link = famJamestownDescentTank_3420774917
+    link = piston.02_1438151685
+    link = piston.02_3149272361
+    link = piston.02_1389735964
+    link = piston.02_3168522544
+    attN = top,famJamestown_3309267511_0|0.7|0
+    attN = pod1,famJamestownDescentTank_724634395_-1.64|1.38|-1.4
+    attN = pod2,famJamestownDescentTank_3260198446_-1.64|1.38|1.4
+    attN = pod3,famJamestownDescentTank_744279810_1.64|1.38|-1.4
+    attN = pod4,famJamestownDescentTank_3420774917_1.64|1.38|1.4
+    attN = jack1,piston.02_1438151685_-1.12|1.21459|-1.83
+    attN = jack2,piston.02_3149272361_-1.12|1.21459|1.83
+    attN = jack3,piston.02_1389735964_1.12|1.21459|-1.83
+    attN = jack4,piston.02_3168522544_1.12|1.21459|1.83
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famJamestownDescentTank_724634395
+    partName = Part
+    persistentId = 4142952342
+    pos = -1.64,2.69,-1.4
+    attPos = 0,0,0
+    attPos0 = -1.64,0.99,-1.4
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = liquidEngineMini.v2_1547058061
+    attN = top,famJamestownFrame_2990037665_0|0.39|0
+    attN = bottom,liquidEngineMini.v2_1547058061_0|-0.39|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 39.6
+        maxAmount = 45
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 48.4
+        maxAmount = 55
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = liquidEngineMini.v2_1547058061
+    partName = Part
+    persistentId = 2977407405
+    pos = -1.64,2.3,-1.4
+    attPos = 0,0,0
+    attPos0 = 0,-0.39,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,famJamestownDescentTank_724634395_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+        thrustPercentage = 35
+        stagingEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleJettison
+        isEnabled = True
+        isJettisoned = True
+        stagingEnabled = False
+    }
+    MODULE
+    {
+        name = ModuleGimbal
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleTestSubject
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+        selectedVariant = Bare
+    }
+    MODULE
+    {
+        name = FXModuleAnimateThrottle
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownDescentTank_3260198446
+    partName = Part
+    persistentId = 1604742814
+    pos = -1.64,2.69,1.4
+    attPos = 0,0,0
+    attPos0 = -1.64,0.99,1.4
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = liquidEngineMini.v2_3042287288
+    attN = top,famJamestownFrame_2990037665_0|0.39|0
+    attN = bottom,liquidEngineMini.v2_3042287288_0|-0.39|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 39.6
+        maxAmount = 45
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 48.4
+        maxAmount = 55
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = liquidEngineMini.v2_3042287288
+    partName = Part
+    persistentId = 2764910544
+    pos = -1.64,2.3,1.4
+    attPos = 0,0,0
+    attPos0 = 0,-0.39,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,famJamestownDescentTank_3260198446_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+        thrustPercentage = 35
+        stagingEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleJettison
+        isEnabled = True
+        isJettisoned = True
+        stagingEnabled = False
+    }
+    MODULE
+    {
+        name = ModuleGimbal
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleTestSubject
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+        selectedVariant = Bare
+    }
+    MODULE
+    {
+        name = FXModuleAnimateThrottle
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownDescentTank_744279810
+    partName = Part
+    persistentId = 402836348
+    pos = 1.64,2.69,-1.4
+    attPos = 0,0,0
+    attPos0 = 1.64,0.99,-1.4
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = liquidEngineMini.v2_1532755860
+    attN = top,famJamestownFrame_2990037665_0|0.39|0
+    attN = bottom,liquidEngineMini.v2_1532755860_0|-0.39|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 39.6
+        maxAmount = 45
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 48.4
+        maxAmount = 55
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = liquidEngineMini.v2_1532755860
+    partName = Part
+    persistentId = 2146504280
+    pos = 1.64,2.3,-1.4
+    attPos = 0,0,0
+    attPos0 = 0,-0.39,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 2
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,famJamestownDescentTank_744279810_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+        thrustPercentage = 35
+        stagingEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleJettison
+        isEnabled = True
+        isJettisoned = True
+        stagingEnabled = False
+    }
+    MODULE
+    {
+        name = ModuleGimbal
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleTestSubject
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+        selectedVariant = Bare
+    }
+    MODULE
+    {
+        name = FXModuleAnimateThrottle
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownDescentTank_3420774917
+    partName = Part
+    persistentId = 2313268394
+    pos = 1.64,2.69,1.4
+    attPos = 0,0,0
+    attPos0 = 1.64,0.99,1.4
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = liquidEngineMini.v2_3169047187
+    attN = top,famJamestownFrame_2990037665_0|0.39|0
+    attN = bottom,liquidEngineMini.v2_3169047187_0|-0.39|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 39.6
+        maxAmount = 45
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 48.4
+        maxAmount = 55
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = liquidEngineMini.v2_3169047187
+    partName = Part
+    persistentId = 3914696662
+    pos = 1.64,2.3,1.4
+    attPos = 0,0,0
+    attPos0 = 0,-0.39,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 3
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,famJamestownDescentTank_3420774917_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+        thrustPercentage = 35
+        stagingEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleJettison
+        isEnabled = True
+        isJettisoned = True
+        stagingEnabled = False
+    }
+    MODULE
+    {
+        name = ModuleGimbal
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleTestSubject
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+        selectedVariant = Bare
+    }
+    MODULE
+    {
+        name = FXModuleAnimateThrottle
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = piston.02_1438151685
+    partName = Part
+    persistentId = 2686896980
+    pos = -1.12,2.493867,-1.83
+    attPos = 0,0,0
+    attPos0 = -1.12,0.793867,-1.83
+    rot = -1,0,0,0
+    attRot = 0,0,0,1
+    attRot0 = -1,0,0,0
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownFootpad_582960275
+    attN = bottom,famJamestownFrame_2990037665_0|-0.420726|0
+    attN = top,famJamestownFootpad_582960275_0|0.643867|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticServoPiston
+        isEnabled = True
+        targetExtension = 0
+        traverseVelocity = 0.08
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownFootpad_582960275
+    partName = Part
+    persistentId = 2286804457
+    pos = -1.12,1.85,-1.83
+    attPos = 0,0,0
+    attPos0 = 0,-0.643867,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,piston.02_1438151685_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = piston.02_3149272361
+    partName = Part
+    persistentId = 858978775
+    pos = -1.12,2.493867,1.83
+    attPos = 0,0,0
+    attPos0 = -1.12,0.793867,1.83
+    rot = -1,0,0,0
+    attRot = 0,0,0,1
+    attRot0 = -1,0,0,0
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownFootpad_3434161599
+    attN = bottom,famJamestownFrame_2990037665_0|-0.420726|0
+    attN = top,famJamestownFootpad_3434161599_0|0.643867|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticServoPiston
+        isEnabled = True
+        targetExtension = 0
+        traverseVelocity = 0.08
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownFootpad_3434161599
+    partName = Part
+    persistentId = 1037001501
+    pos = -1.12,1.85,1.83
+    attPos = 0,0,0
+    attPos0 = 0,-0.643867,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,piston.02_3149272361_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = piston.02_1389735964
+    partName = Part
+    persistentId = 200895152
+    pos = 1.12,2.493867,-1.83
+    attPos = 0,0,0
+    attPos0 = 1.12,0.793867,-1.83
+    rot = -1,0,0,0
+    attRot = 0,0,0,1
+    attRot0 = -1,0,0,0
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownFootpad_634552458
+    attN = bottom,famJamestownFrame_2990037665_0|-0.420726|0
+    attN = top,famJamestownFootpad_634552458_0|0.643867|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticServoPiston
+        isEnabled = True
+        targetExtension = 0
+        traverseVelocity = 0.08
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownFootpad_634552458
+    partName = Part
+    persistentId = 1562106093
+    pos = 1.12,1.85,-1.83
+    attPos = 0,0,0
+    attPos0 = 0,-0.643867,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,piston.02_1389735964_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = piston.02_3168522544
+    partName = Part
+    persistentId = 1146396777
+    pos = 1.12,2.493867,1.83
+    attPos = 0,0,0
+    attPos0 = 1.12,0.793867,1.83
+    rot = -1,0,0,0
+    attRot = 0,0,0,1
+    attRot0 = -1,0,0,0
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownFootpad_3420250534
+    attN = bottom,famJamestownFrame_2990037665_0|-0.420726|0
+    attN = top,famJamestownFootpad_3420250534_0|0.643867|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticServoPiston
+        isEnabled = True
+        targetExtension = 0
+        traverseVelocity = 0.08
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownFootpad_3420250534
+    partName = Part
+    persistentId = 4177312956
+    pos = 1.12,1.85,1.83
+    attPos = 0,0,0
+    attPos0 = 0,-0.643867,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,piston.02_3168522544_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = rotoServo.02_1533279287
+    partName = Part
+    persistentId = 2260357777
+    pos = -1.879157,3.6,0
+    attPos = 0,0,0
+    attPos0 = -1.879157,-0.15,0
+    rot = -0.5,0.5,0.5,0.5
+    attRot = 0,0,0,1
+    attRot0 = -0.5,0.5,0.5,0.5
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = dockingPort2_744803489
+    attN = bottom,famJamestown_3309267511_0|0|0
+    attN = top,dockingPort2_744803489_0|0.21796|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticRotationServo
+        isEnabled = True
+        targetAngle = 0
+        traverseVelocity = 5
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_744803489
+    partName = Part
+    persistentId = 2008687401
+    pos = -2.097117,3.6,0
+    attPos = 0,0,0
+    attPos0 = -0.21796,0,0
+    rot = -0.5,0.5,0.5,0.5
+    attRot = 0,0,0,1
+    attRot0 = -0.5,0.5,0.5,0.5
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,rotoServo.02_1533279287_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = rotoServo.02_2123704262
+    partName = Part
+    persistentId = 44430463
+    pos = 1.879157,3.6,0
+    attPos = 0,0,0
+    attPos0 = 1.879157,-0.15,0
+    rot = -0.5,-0.5,-0.5,0.5
+    attRot = 0,0,0,1
+    attRot0 = -0.5,-0.5,-0.5,0.5
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = dockingPort2_160569168
+    attN = bottom,famJamestown_3309267511_0|0|0
+    attN = top,dockingPort2_160569168_0|0.21796|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticRotationServo
+        isEnabled = True
+        targetAngle = 0
+        traverseVelocity = 5
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_160569168
+    partName = Part
+    persistentId = 31891492
+    pos = 2.097117,3.6,0
+    attPos = 0,0,0
+    attPos0 = 0.21796,0,0
+    rot = -0.5,-0.5,-0.5,0.5
+    attRot = 0,0,0,1
+    attRot0 = -0.5,-0.5,-0.5,0.5
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,rotoServo.02_2123704262_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_2426095338
+    partName = Part
+    persistentId = 3423253613
+    pos = 0,4.55,0
+    attPos = 0,0,0
+    attPos0 = 0,0.8,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,famJamestown_3309267511_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = rotoServo.02_3885790844
+    partName = Part
+    persistentId = 3882137519
+    pos = 0,3.6,1.58104
+    attPos = 0,0,0
+    attPos0 = 0,-0.15,1.58104
+    rot = 0.7071068,0,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0.7071068,0,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = dockingPort2_2046354399
+    attN = bottom,famJamestown_3309267511_0|0|0
+    attN = top,dockingPort2_2046354399_0|0.21796|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticRotationServo
+        isEnabled = True
+        targetAngle = 0
+        traverseVelocity = 5
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_2046354399
+    partName = Part
+    persistentId = 565824560
+    pos = 0,3.6,1.799
+    attPos = 0,0,0
+    attPos0 = 0,0,0.21796
+    rot = 0.7071068,0,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0.7071068,0,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,rotoServo.02_3885790844_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = rotoServo.02_251646793
+    partName = Part
+    persistentId = 3513857554
+    pos = 0,3.6,-1.515
+    attPos = 0,0,0
+    attPos0 = 0,-0.15,-1.515
+    rot = -0.7071068,0,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = -0.7071068,0,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = dockingPort2_2549514995
+    attN = bottom,famJamestown_3309267511_0|0|0
+    attN = top,dockingPort2_2549514995_0|0.21796|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleRoboticRotationServo
+        isEnabled = True
+        targetAngle = 0
+        traverseVelocity = 5
+        servoIsLocked = True
+    }
+    MODULE
+    {
+        name = ModulePartVariants
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleResourceAutoShiftState
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_2549514995
+    partName = Part
+    persistentId = 3130946998
+    pos = 0,3.6,-1.73296
+    attPos = 0,0,0
+    attPos0 = 0,0,-0.21796
+    rot = -0.7071068,0,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = -0.7071068,0,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = dockingPort2_3773936229
+    attN = bottom,rotoServo.02_251646793_0|0|0
+    attN = top,dockingPort2_3773936229_0|0.282883|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = dockingPort2_3773936229
+    partName = Part
+    persistentId = 273239858
+    pos = 0,3.6,-2.298726
+    attPos = 0,0,0
+    attPos0 = 0,0,-0.5657664
+    rot = 0,-0.7071068,-0.7071068,0
+    attRot = 0,0,0,1
+    attRot0 = 0,-0.7071068,-0.7071068,0
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famJamestownAirlock_1884205044
+    attN = top,dockingPort2_2549514995_0|0.282883|0
+    attN = bottom,famJamestownAirlock_1884205044_0|0|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+    MODULE
+    {
+        name = ModuleCargoPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleColorChanger
+        isEnabled = True
+    }
+}
+PART
+{
+    part = famJamestownAirlock_1884205044
+    partName = Part
+    persistentId = 3379870947
+    pos = 0,3.6,-2.858726
+    attPos = 0,0,0
+    attPos0 = 0,0,-0.56
+    rot = -0.7071068,0,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = -0.7071068,0,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,dockingPort2_3773936229_0|-0.56|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 75
+        maxAmount = 75
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 12
+        maxAmount = 12
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    MODULE
+    {
+        name = ModuleAnimateGeneric
+        isEnabled = True
+        animTime = 1
+        animSwitch = False
+    }
+}
+PART
+{
+    part = solarPanels3_122265442
+    partName = Part
+    persistentId = 2890632269
+    pos = -1.15,4.47,-1.26
+    attPos = 0,0,0
+    attPos0 = -1.15,0.72,-1.26
+    rot = -0.1227878,-0.6963642,0.1227878,0.6963642
+    attRot = 0,0,0,1
+    attRot0 = -0.1227878,-0.6963642,0.1227878,0.6963642
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = solarPanels4_1737365127
+    partName = Part
+    persistentId = 1811542327
+    pos = 0,4.47,-1.3
+    attPos = 0,0,0
+    attPos0 = 0,0.72,-1.3
+    rot = -0.1227878,-0.6963642,0.1227878,0.6963642
+    attRot = 0,0,0,1
+    attRot0 = -0.1227878,-0.6963642,0.1227878,0.6963642
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = solarPanels3_277423633
+    partName = Part
+    persistentId = 2993617269
+    pos = 1.15,4.47,-1.26
+    attPos = 0,0,0
+    attPos0 = 1.15,0.72,-1.26
+    rot = -0.1227878,-0.6963642,0.1227878,0.6963642
+    attRot = 0,0,0,1
+    attRot0 = -0.1227878,-0.6963642,0.1227878,0.6963642
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = solarPanels3_2306897835
+    partName = Part
+    persistentId = 991443611
+    pos = -1.15,4.47,1.26
+    attPos = 0,0,0
+    attPos0 = -1.15,0.72,1.26
+    rot = -0.1053888,0.699209,-0.1053888,0.699209
+    attRot = 0,0,0,1
+    attRot0 = -0.1053888,0.699209,-0.1053888,0.699209
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = solarPanels4_4270278461
+    partName = Part
+    persistentId = 154718042
+    pos = 0,4.47,1.3
+    attPos = 0,0,0
+    attPos0 = 0,0.72,1.3
+    rot = -0.1053888,0.699209,-0.1053888,0.699209
+    attRot = 0,0,0,1
+    attRot0 = -0.1053888,0.699209,-0.1053888,0.699209
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = solarPanels3_1625543326
+    partName = Part
+    persistentId = 2925401621
+    pos = 1.15,4.47,1.26
+    attPos = 0,0,0
+    attPos0 = 1.15,0.72,1.26
+    rot = -0.1053888,0.699209,-0.1053888,0.699209
+    attRot = 0,0,0,1
+    attRot0 = -0.1053888,0.699209,-0.1053888,0.699209
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = HighGainAntenna5.v2_400876040
+    partName = Part
+    persistentId = 739877502
+    pos = 1.36,4.12,1.3
+    attPos = 0,0,0
+    attPos0 = 1.36,0.37,1.3
+    rot = 0,-0.7071068,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0,-0.7071068,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDeployableAntenna
+        isEnabled = True
+        deployState = EXTENDED
+        animTime = 1
+    }
+}
+PART
+{
+    part = ladder1_2397942706
+    partName = Part
+    persistentId = 1805004086
+    pos = -0.87,3.18,1.565
+    attPos = 0,0,0
+    attPos0 = -0.87,-0.57,1.565
+    rot = 0,0.7071068,0,0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0,0.7071068,0,0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famJamestown_3309267511
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}

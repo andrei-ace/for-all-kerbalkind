@@ -1,0 +1,224 @@
+ship = Apollo 24 Osprey
+version = 1.12.5
+description = Stranded command ship for the Apollo 24 rescue.
+type = VAB
+size = 2.5,3.9,2.5
+steamPublishedFileId = 0
+persistentId = 104860286
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Ship
+PART
+{
+    part = famApolloCM_611688728
+    partName = Part
+    persistentId = 1453917736
+    pos = 0,4.075,0
+    attPos = 0,0,0
+    attPos0 = 0,4.075,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famApolloSMBus_1400017294
+    attN = bottom,famApolloSMBus_1400017294_0|-0.825|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 320
+        maxAmount = 320
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 18
+        maxAmount = 18
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Ablator
+        amount = 410
+        maxAmount = 410
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    MODULE
+    {
+        name = ModuleCommand
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDataTransmitter
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleReactionWheel
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceContainer
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceExperiment
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleInventoryPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleRCSFX
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleAblator
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+}
+PART
+{
+    part = famApolloSMBus_1400017294
+    partName = Part
+    persistentId = 1661028934
+    pos = 0,2.125,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.95,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famApolloSMMotor_3397107764
+    attN = bottom,famApolloSMMotor_3397107764_0|-0.745|0
+    attN = top,famApolloCM_611688728_0|1.125|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 0
+        maxAmount = 112.5
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 0
+        maxAmount = 137.5
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famApolloSMMotor_3397107764
+    partName = Part
+    persistentId = 3259314691
+    pos = 0,2.125,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = top,famApolloSMBus_1400017294_0|-0.745|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}

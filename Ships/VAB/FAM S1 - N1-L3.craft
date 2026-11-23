@@ -1,0 +1,1483 @@
+ship = FAM S1 - N1-L3
+version = 1.12.5
+description = Seat two in the LOK. Stage the lunar train in Mun orbit at zero throttle to release the spacecraft and arm their engines. Turn and dock nose-to-nose with the LK.
+type = VAB
+size = 3.75,26.25,3.75
+steamPublishedFileId = 0
+persistentId = 1737469889
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Ship
+PART
+{
+    part = famLOK_3784582599
+    partName = Part
+    persistentId = 1079248911
+    pos = 0,23.95,0
+    attPos = 0,0,0
+    attPos0 = 0,23.95,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = parachuteRadial_2526221649
+    link = parachuteRadial_261768427
+    link = famLaunchTower_2023584893
+    link = famRing125_3875135966
+    attN = top,famLaunchTower_2023584893_0|0.95|0
+    attN = bottom,famRing125_3875135966_0|-0.95|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 320
+        maxAmount = 320
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 18
+        maxAmount = 18
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Ablator
+        amount = 250
+        maxAmount = 250
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    MODULE
+    {
+        name = ModuleCommand
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDataTransmitter
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleReactionWheel
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceContainer
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceExperiment
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleInventoryPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleRCSFX
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleAblator
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+}
+PART
+{
+    part = parachuteRadial_2526221649
+    partName = Part
+    persistentId = 2782184581
+    pos = 0.6079346,23.85805,-0.6079346
+    attPos = 0,0,0
+    attPos0 = 0.6079346,-0.09195446,-0.6079346
+    rot = 0.01905987,-0.382602,0.007894858,0.9236829
+    attRot = 0,0,0,1
+    attRot0 = 0.01905987,-0.382602,0.007894858,0.9236829
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famLOK_3784582599
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = parachuteRadial_261768427
+    partName = Part
+    persistentId = 3300081682
+    pos = -0.6079346,23.85805,0.6079346
+    attPos = 0,0,0
+    attPos0 = -0.6079346,-0.09195446,0.6079346
+    rot = 0.007894858,0.9236829,-0.01905987,0.382602
+    attRot = 0,0,0,1
+    attRot0 = 0.007894858,0.9236829,-0.01905987,0.382602
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 0
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famLOK_3784582599
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famLaunchTower_2023584893
+    partName = Part
+    persistentId = 2493502365
+    pos = 0,26.075,0
+    attPos = 0,0,0
+    attPos0 = 0,2.125,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 6
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    attN = bottom,famLOK_3784582599_0|-1.175|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+        stagingEnabled = False
+        ACTIONS
+        {
+            ActivateAction
+            {
+                actionGroup = Abort
+                wasActiveBeforePartWasAdjusted = False
+            }
+        }
+    }
+    RESOURCE
+    {
+        name = SolidFuel
+        amount = 12
+        maxAmount = 12
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famRing125_3875135966
+    partName = Part
+    persistentId = 1468077775
+    pos = 0,22.935,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.015,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 1
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLOKServiceBus_2449396040
+    attN = top,famLOK_3784582599_0|0.065|0
+    attN = bottom,famLOKServiceBus_2449396040_0|-0.065|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleDecouple
+        isEnabled = True
+        stagingEnabled = True
+        ACTIONS
+        {
+            DecoupleAction
+            {
+                actionGroup = Abort
+                wasActiveBeforePartWasAdjusted = False
+            }
+        }
+    }
+}
+PART
+{
+    part = famLOKServiceBus_2449396040
+    partName = Part
+    persistentId = 1871419464
+    pos = 0,21.995,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.94,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLOKServiceMotor_150438130
+    attN = bottom,famLOKServiceMotor_150438130_0|-0.495|0
+    attN = top,famRing125_3875135966_0|0.875|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 82.8
+        maxAmount = 82.8
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 101.2
+        maxAmount = 101.2
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famLOKServiceMotor_150438130
+    partName = Part
+    persistentId = 1247216049
+    pos = 0,21.995,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing125_2146480228
+    attN = top,famLOKServiceBus_2449396040_0|-0.495|0
+    attN = bottom,famRing125_2146480228_0|-0.875|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing125_2146480228
+    partName = Part
+    persistentId = 885359014
+    pos = 0,21.055,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.94,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLK_4014976501
+    attN = top,famLOKServiceMotor_150438130_0|0.065|0
+    attN = bottom,famLK_4014976501_0|-0.065|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famLK_4014976501
+    partName = Part
+    persistentId = 3630655501
+    pos = 0,20.21,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.845,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 2
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing125_2554895715
+    attN = top,famRing125_2146480228_0|0.78|0
+    attN = bottom,famRing125_2554895715_0|-0.78|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 23.4
+        maxAmount = 23.4
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 28.6
+        maxAmount = 28.6
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 320
+        maxAmount = 320
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 18
+        maxAmount = 18
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    MODULE
+    {
+        name = ModuleEnginesFX
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleAlternator
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleCommand
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDataTransmitter
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleReactionWheel
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceContainer
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceExperiment
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleInventoryPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleRCSFX
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+}
+PART
+{
+    part = famRing125_2554895715
+    partName = Part
+    persistentId = 473380209
+    pos = 0,19.365,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.845,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 2
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLKPlatformFrame_3894488406
+    attN = top,famLK_4014976501_0|0.065|0
+    attN = bottom,famLKPlatformFrame_3894488406_0|-0.065|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famLKPlatformFrame_3894488406
+    partName = Part
+    persistentId = 3178015909
+    pos = 0,18.74,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.625,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLKPlatformTank_2670075328
+    attN = bottom,famLKPlatformTank_2670075328_0|0.28|0
+    attN = top,famRing125_2554895715_0|0.56|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famLKPlatformTank_2670075328
+    partName = Part
+    persistentId = 1915887738
+    pos = 0,18.74,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLKPlatformMotor_103763066
+    attN = top,famLKPlatformFrame_3894488406_0|0.28|0
+    attN = bottom,famLKPlatformMotor_103763066_0|-0.18|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 51.3
+        maxAmount = 51.3
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 62.7
+        maxAmount = 62.7
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famLKPlatformMotor_103763066
+    partName = Part
+    persistentId = 3022398858
+    pos = 0,18.74,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 2
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famPayloadAdapter_1898478828
+    attN = top,famLKPlatformTank_2670075328_0|-0.18|0
+    attN = bottom,famPayloadAdapter_1898478828_0|-0.56|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famPayloadAdapter_1898478828
+    partName = Part
+    persistentId = 1487502170
+    pos = 0,17.74,0
+    attPos = 0,0,0
+    attPos0 = 0,-1,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 3
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 310.019
+    modMass = 0.38752
+    modSize = 0,0,0
+    link = famBlockGTank_4014795087
+    attN = top,famLKPlatformMotor_103763066_0|0.44|0
+    attN = bottom,famBlockGTank_4014795087_0|-0.44|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleProceduralFairing
+        isEnabled = True
+        interstageCraftID = 2449396040
+        nArcs = 2
+        ejectionForce = 60
+        useClamshell = True
+        stagingEnabled = True
+        fsm = st_idle
+        XSECTION
+        {
+            h = 0.00000
+            r = 1.25000
+        }
+        XSECTION
+        {
+            h = 0.63000
+            r = 1.49000
+        }
+        XSECTION
+        {
+            h = 3.11000
+            r = 1.49000
+        }
+        XSECTION
+        {
+            h = 4.26000
+            r = 0.94000
+        }
+    }
+}
+PART
+{
+    part = famBlockGTank_4014795087
+    partName = Part
+    persistentId = 3408144133
+    pos = 0,16.05,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.69,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famBlockGMotor_2555107801
+    attN = bottom,famBlockGMotor_2555107801_0|-0.766|0
+    attN = top,famPayloadAdapter_1898478828_0|1.25|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 261
+        maxAmount = 261
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 319
+        maxAmount = 319
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famBlockGMotor_2555107801
+    partName = Part
+    persistentId = 1342989252
+    pos = 0,16.05,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 4
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing250_21137507
+    attN = top,famBlockGTank_4014795087_0|-0.766|0
+    attN = bottom,famRing250_21137507_0|-1.25|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing250_21137507
+    partName = Part
+    persistentId = 2787291316
+    pos = 0,14.72,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.33,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 4
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1VTank_1984280821
+    attN = top,famBlockGMotor_2555107801_0|0.08|0
+    attN = bottom,famN1VTank_1984280821_0|-0.08|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1VTank_1984280821
+    partName = Part
+    persistentId = 2801076656
+    pos = 0,13.24,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.48,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1VMotor_3875186020
+    attN = bottom,famN1VMotor_3875186020_0|-0.85792|0
+    attN = top,famRing250_21137507_0|1.4|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 378
+        maxAmount = 378
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 462
+        maxAmount = 462
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famN1VMotor_3875186020
+    partName = Part
+    persistentId = 2586843627
+    pos = 0,13.24,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 5
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing250_2449315314
+    attN = top,famN1VTank_1984280821_0|-0.85792|0
+    attN = bottom,famRing250_2449315314_0|-1.4|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing250_2449315314
+    partName = Part
+    persistentId = 356071351
+    pos = 0,11.76,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.48,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 5
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1BTank_3272375957
+    attN = top,famN1VMotor_3875186020_0|0.08|0
+    attN = bottom,famN1BTank_3272375957_0|-0.08|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1BTank_3272375957
+    partName = Part
+    persistentId = 1904344924
+    pos = 0,9.58,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.18,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1BMotor_3020639747
+    attN = bottom,famN1BMotor_3020639747_0|-1.40536|0
+    attN = top,famRing250_2449315314_0|2.1|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 981
+        maxAmount = 981
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 1199
+        maxAmount = 1199
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famN1BMotor_3020639747
+    partName = Part
+    persistentId = 2695762397
+    pos = 0,9.58,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 6
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing375_755113913
+    attN = top,famN1BTank_3272375957_0|-1.40536|0
+    attN = bottom,famRing375_755113913_0|-2.1|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing375_755113913
+    partName = Part
+    persistentId = 1702414398
+    pos = 0,7.39,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.19,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 6
+    resPri = 0
+    dstg = 0
+    sidx = 2
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1ATank_1510289199
+    attN = top,famN1BMotor_3020639747_0|0.09|0
+    attN = bottom,famN1ATank_1510289199_0|-0.09|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1ATank_1510289199
+    partName = Part
+    persistentId = 803808907
+    pos = 0,4.15,0
+    attPos = 0,0,0
+    attPos0 = 0,-3.24,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1AMotor_3294739084
+    attN = bottom,famN1AMotor_3294739084_0|-2.78947|0
+    attN = top,famRing375_755113913_0|3.15|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 2385
+        maxAmount = 2385
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 2915
+        maxAmount = 2915
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famN1AMotor_3294739084
+    partName = Part
+    persistentId = 2403893516
+    pos = 0,4.15,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 7
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famN1ControlFin_3009841690
+    link = famN1ControlFin_711973792
+    link = famN1ControlFin_1567157046
+    link = famN1ControlFin_3453482663
+    attN = top,famN1ATank_1510289199_0|-2.78947|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1ControlFin_3009841690
+    partName = Part
+    persistentId = 1535831743
+    pos = 1.710423,1.215525,0
+    attPos = 0,0,0
+    attPos0 = 1.710423,-2.934475,0
+    rot = 0,-1,0,6.123234e-17
+    attRot = 0,0,0,1
+    attRot0 = 0,-1,0,6.123234e-17
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famN1AMotor_3294739084
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1ControlFin_711973792
+    partName = Part
+    persistentId = 1734057490
+    pos = 1.047332e-16,1.215525,1.710423
+    attPos = 0,0,0
+    attPos0 = 1.047332e-16,-2.934475,1.710423
+    rot = 0,-0.7071068,0,-0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0,-0.7071068,0,-0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famN1AMotor_3294739084
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1ControlFin_1567157046
+    partName = Part
+    persistentId = 3841755513
+    pos = -1.710423,1.215525,2.094664e-16
+    attPos = 0,0,0
+    attPos0 = -1.710423,-2.934475,2.094664e-16
+    rot = 0,-1.224647e-16,0,-1
+    attRot = 0,0,0,1
+    attRot0 = 0,-1.224647e-16,0,-1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famN1AMotor_3294739084
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famN1ControlFin_3453482663
+    partName = Part
+    persistentId = 1423974776
+    pos = -3.141997e-16,1.215525,-1.710423
+    attPos = 0,0,0
+    attPos0 = -3.141997e-16,-2.934475,-1.710423
+    rot = 0,0.7071068,0,-0.7071068
+    attRot = 0,0,0,1
+    attRot0 = 0,0.7071068,0,-0.7071068
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famN1AMotor_3294739084
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}

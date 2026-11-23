@@ -1,0 +1,2809 @@
+GAME
+{
+    version = 1.12.5
+    Title = FAM S1.1 - Red Mun
+    Description = Soviet program. Launch the complete N1-L3 from Kerbin, insert into Mun orbit and put one pilot on the surface. Reunite in orbit and fly both Kerbals home.
+    linkURL = 
+    linkCaption = 
+    Mode = SCENARIO
+    Status = 1
+    Seed = 763253022
+    scene = 7
+    editor = None
+    flag = Squad/Flags/default
+    launchID = 2
+    modded = True
+    PARAMETERS
+    {
+        preset = Normal
+        FLIGHT
+        {
+            CanQuickSave = True
+            CanQuickLoad = True
+            CanAutoSave = True
+            CanUseMap = True
+            CanSwitchVesselsNear = True
+            CanSwitchVesselsFar = True
+            CanTimeWarpHigh = True
+            CanTimeWarpLow = True
+            CanEVA = True
+            CanIVA = True
+            CanBoard = True
+            CanRestart = True
+            CanLeaveToEditor = False
+            CanLeaveToTrackingStation = True
+            CanLeaveToSpaceCenter = True
+            CanLeaveToMainMenu = True
+        }
+        DIFFICULTY
+        {
+            EnableCommNet = False
+            MissingCrewsRespawn = False
+            ReentryHeatScale = 1
+        }
+        AdvancedParams
+        {
+            EnableKerbalExperience = False
+            ResourceTransferObeyCrossfeed = False
+        }
+    }
+    FLIGHTSTATE
+    {
+        version = 1.12.5
+        UT = 20000
+        activeVessel = 0
+        mapViewFiltering = -1026
+        commNetUIModeTracking = None
+        commNetUIModeFlight = None
+        VESSEL
+        {
+            pid = 576a8ed251665ac097ac3f37c01e123d
+            persistentId = 2818235729
+            name = Red Mun
+            type = Ship
+            sit = PRELAUNCH
+            landed = True
+            skipGroundPositioning = False
+            splashed = False
+            met = 0
+            lct = 20000
+            lastUT = 20000
+            root = 0
+            lat = -0.0972078
+            lon = -74.5576741
+            alt = 95.436
+            hgt = 22.949999999999996
+            nrm = 0,1,0
+            rot = -0.70129,-0.09492073,-0.09508191,0.7001012
+            stg = 8
+            prst = False
+            ref = 320253031
+            ctrl = True
+            altDispState = AGL
+            landedAt = LaunchPad
+            displaylandedAt = #autoLOC_6002112
+            launchedFrom = LaunchPad
+            ORBIT
+            {
+                SMA = 300047.718
+                ECC = 0.9997
+                INC = 0.0972078
+                LPE = 90
+                LAN = -74.5576741
+                MNA = 3.141592653589793
+                EPH = 20000
+                REF = 1
+            }
+            ACTIONGROUPS
+            {
+            }
+            DISCOVERY
+            {
+                state = -1
+                lastObservedTime = 0
+                lifetime = Infinity
+                refTime = Infinity
+                size = 2
+            }
+            FLIGHTPLAN
+            {
+            }
+            CTRLSTATE
+            {
+                pitch = 0
+                yaw = 0
+                roll = 0
+                trimPitch = 0
+                trimYaw = 0
+                trimRoll = 0
+                mainThrottle = 0
+            }
+            VESSELMODULES
+            {
+            }
+            PART
+            {
+                name = famLOK
+                cid = 320253031
+                uid = 320253031
+                mid = 320253031
+                persistentId = 3949585630
+                launchID = 1
+                parent = 0
+                position = 0,0,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 1.18
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 3
+                attN = bottom, 4
+                crew = Lev Kerman
+                crew = Aleksei Kerman
+                MODULE
+                {
+                    name = ModuleCommand
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDataTransmitter
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleReactionWheel
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleScienceContainer
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleScienceExperiment
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleInventoryPart
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleRCSFX
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = ModuleAblator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDockingNode
+                    isEnabled = True
+                    stagingEnabled = False
+                    state = Ready
+                    dockUId = 0
+                }
+                RESOURCE
+                {
+                    name = ElectricCharge
+                    amount = 320
+                    maxAmount = 320
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = MonoPropellant
+                    amount = 18
+                    maxAmount = 18
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Ablator
+                    amount = 250
+                    maxAmount = 250
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = parachuteRadial
+                cid = 1678875889
+                uid = 1678875889
+                mid = 320253031
+                persistentId = 3095148368
+                launchID = 1
+                parent = 0
+                position = 0.6079346,-0.09195446,-0.6079346
+                rotation = 0.01905987,-0.382602,0.007894858,0.9236829
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 0
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 1
+                srfN = srfAttach, 0
+                mass = 0.1
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleParachute
+                    isEnabled = True
+                    stagingEnabled = True
+                    persistentState = STOWED
+                    animTime = 0
+                }
+                MODULE
+                {
+                    name = ModuleTestSubject
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDragModifier
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDragModifier
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleCargoPart
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = parachuteRadial
+                cid = 4246261067
+                uid = 4246261067
+                mid = 320253031
+                persistentId = 3115851030
+                launchID = 1
+                parent = 0
+                position = -0.6079346,-0.09195446,0.6079346
+                rotation = 0.007894858,0.9236829,-0.01905987,0.382602
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 0
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 1
+                srfN = srfAttach, 0
+                mass = 0.1
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleParachute
+                    isEnabled = True
+                    stagingEnabled = True
+                    persistentState = STOWED
+                    animTime = 0
+                }
+                MODULE
+                {
+                    name = ModuleTestSubject
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDragModifier
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDragModifier
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleCargoPart
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famLaunchTower
+                cid = 2317352413
+                uid = 2317352413
+                mid = 320253031
+                persistentId = 2619768923
+                launchID = 1
+                parent = 0
+                position = 0,2.125,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 6
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.24
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, -1
+                attN = bottom, 0
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = False
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                    ACTIONS
+                    {
+                        ActivateAction
+                        {
+                            actionGroup = Abort
+                            wasActiveBeforePartWasAdjusted = False
+                        }
+                    }
+                }
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = FAMStagePolicy
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                RESOURCE
+                {
+                    name = SolidFuel
+                    amount = 12
+                    maxAmount = 12
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famRing125
+                cid = 343631998
+                uid = 343631998
+                mid = 320253031
+                persistentId = 785703768
+                launchID = 1
+                parent = 0
+                position = 0,-1.015,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.045
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 0
+                attN = bottom, 5
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                    ACTIONS
+                    {
+                        DecoupleAction
+                        {
+                            actionGroup = Abort
+                            wasActiveBeforePartWasAdjusted = False
+                        }
+                    }
+                }
+            }
+            PART
+            {
+                name = famLOKServiceBus
+                cid = 1669093608
+                uid = 1669093608
+                mid = 320253031
+                persistentId = 300533822
+                launchID = 1
+                parent = 4
+                position = 0,-1.955,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 0.3528
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 4
+                attN = bottom, 6
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 82.8
+                    maxAmount = 82.8
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 101.2
+                    maxAmount = 101.2
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famLOKServiceMotor
+                cid = 4201974098
+                uid = 4201974098
+                mid = 320253031
+                persistentId = 2399864189
+                launchID = 1
+                parent = 5
+                position = 0,-1.955,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 3
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.2072
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 5
+                attN = bottom, 7
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleJettison
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = FAMStagePolicy
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+            }
+            PART
+            {
+                name = famRing125
+                cid = 2373073348
+                uid = 2373073348
+                mid = 320253031
+                persistentId = 84201516
+                launchID = 1
+                parent = 6
+                position = 0,-2.895,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 3
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 0
+                srfN = , -1
+                mass = 0.045
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 6
+                attN = bottom, 8
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famLK
+                cid = 499983445
+                uid = 499983445
+                mid = 320253031
+                persistentId = 2592612066
+                launchID = 1
+                parent = 7
+                position = 0,-3.74,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 2
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.56
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 7
+                attN = bottom, 9
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleCommand
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDataTransmitter
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleReactionWheel
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleScienceContainer
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleScienceExperiment
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleInventoryPart
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleRCSFX
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = ModuleDockingNode
+                    isEnabled = True
+                    stagingEnabled = False
+                    state = Ready
+                    dockUId = 0
+                }
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 23.4
+                    maxAmount = 23.4
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 28.6
+                    maxAmount = 28.6
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = ElectricCharge
+                    amount = 320
+                    maxAmount = 320
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = MonoPropellant
+                    amount = 18
+                    maxAmount = 18
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famRing125
+                cid = 1791628483
+                uid = 1791628483
+                mid = 320253031
+                persistentId = 3327808085
+                launchID = 1
+                parent = 8
+                position = 0,-4.585,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 2
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 0
+                srfN = , -1
+                mass = 0.045
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 8
+                attN = bottom, 10
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famLKPlatformFrame
+                cid = 1040518199
+                uid = 1040518199
+                mid = 320253031
+                persistentId = 2709009203
+                launchID = 1
+                parent = 9
+                position = 0,-5.21,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 0.1634
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 9
+                attN = bottom, 11
+            }
+            PART
+            {
+                name = famLKPlatformTank
+                cid = 1224883361
+                uid = 1224883361
+                mid = 320253031
+                persistentId = 1374060572
+                launchID = 1
+                parent = 10
+                position = 0,-5.21,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 0.0874
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 10
+                attN = bottom, 12
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 51.3
+                    maxAmount = 51.3
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 62.7
+                    maxAmount = 62.7
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famLKPlatformMotor
+                cid = 3490409755
+                uid = 3490409755
+                mid = 320253031
+                persistentId = 2355774774
+                launchID = 1
+                parent = 11
+                position = 0,-5.21,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 3
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 2
+                attm = 0
+                srfN = , -1
+                mass = 0.1292
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                attN = top, 11
+                attN = bottom, 13
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famPayloadAdapter
+                cid = 2802605453
+                uid = 2802605453
+                mid = 320253031
+                persistentId = 3782726337
+                launchID = 1
+                parent = 12
+                position = 0,-6.21,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 3
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 3
+                attm = 0
+                srfN = , -1
+                mass = 0.19
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 310.019
+                modMass = 0.38752
+                attN = top, 12
+                attN = bottom, 14
+                MODULE
+                {
+                    name = ModuleProceduralFairing
+                    isEnabled = True
+                    interstageCraftID = 1669093608
+                    nArcs = 2
+                    ejectionForce = 60
+                    useClamshell = True
+                    stagingEnabled = True
+                    fsm = st_idle
+                    XSECTION
+                    {
+                        h = 0.00000
+                        r = 1.25000
+                    }
+                    XSECTION
+                    {
+                        h = 0.63000
+                        r = 1.49000
+                    }
+                    XSECTION
+                    {
+                        h = 3.11000
+                        r = 1.49000
+                    }
+                    XSECTION
+                    {
+                        h = 4.26000
+                        r = 0.94000
+                    }
+                }
+                MODULE
+                {
+                    name = ModuleCargoBay
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famBlockGTank
+                cid = 963168302
+                uid = 963168302
+                mid = 320253031
+                persistentId = 1840400760
+                launchID = 1
+                parent = 13
+                position = 0,-7.9,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 0.441
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 13
+                attN = bottom, 15
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 261
+                    maxAmount = 261
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 319
+                    maxAmount = 319
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famBlockGMotor
+                cid = 1315961016
+                uid = 1315961016
+                mid = 320253031
+                persistentId = 1667465338
+                launchID = 1
+                parent = 14
+                position = 0,-7.9,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 4
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.259
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 14
+                attN = bottom, 16
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleGimbal
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleJettison
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = FAMStagePolicy
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+            }
+            PART
+            {
+                name = famRing250
+                cid = 3613829378
+                uid = 3613829378
+                mid = 320253031
+                persistentId = 102582624
+                launchID = 1
+                parent = 15
+                position = 0,-9.23,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 4
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 0
+                srfN = , -1
+                mass = 0.1
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 15
+                attN = bottom, 17
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1VTank
+                cid = 2690750868
+                uid = 2690750868
+                mid = 320253031
+                persistentId = 551738521
+                launchID = 1
+                parent = 16
+                position = 0,-10.71,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 0.7182
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 16
+                attN = bottom, 18
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 378
+                    maxAmount = 378
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 462
+                    maxAmount = 462
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famN1VMotor
+                cid = 819889157
+                uid = 819889157
+                mid = 320253031
+                persistentId = 4201010948
+                launchID = 1
+                parent = 17
+                position = 0,-10.71,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 5
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 0.4218
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 17
+                attN = bottom, 19
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleGimbal
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleJettison
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = FAMStagePolicy
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+            }
+            PART
+            {
+                name = famRing250
+                cid = 1205449875
+                uid = 1205449875
+                mid = 320253031
+                persistentId = 2048416626
+                launchID = 1
+                parent = 18
+                position = 0,-12.19,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 5
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 0
+                srfN = , -1
+                mass = 0.1
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 18
+                attN = bottom, 20
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1BTank
+                cid = 354967540
+                uid = 354967540
+                mid = 320253031
+                persistentId = 2305536042
+                launchID = 1
+                parent = 19
+                position = 0,-14.37,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 1.6065
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 19
+                attN = bottom, 21
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 981
+                    maxAmount = 981
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 1199
+                    maxAmount = 1199
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famN1BMotor
+                cid = 1647275874
+                uid = 1647275874
+                mid = 320253031
+                persistentId = 2550727502
+                launchID = 1
+                parent = 20
+                position = 0,-14.37,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 6
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 1
+                attm = 0
+                srfN = , -1
+                mass = 0.9435
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 20
+                attN = bottom, 22
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleGimbal
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleJettison
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+                MODULE
+                {
+                    name = FAMStagePolicy
+                    isEnabled = True
+                    stagingEnabled = False
+                }
+            }
+            PART
+            {
+                name = famRing375
+                cid = 4213587672
+                uid = 4213587672
+                mid = 320253031
+                persistentId = 1237472428
+                launchID = 1
+                parent = 21
+                position = 0,-16.56,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 6
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 2
+                attm = 0
+                srfN = , -1
+                mass = 0.16
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 21
+                attN = bottom, 23
+                MODULE
+                {
+                    name = ModuleDecouple
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1ATank
+                cid = 2350976590
+                uid = 2350976590
+                mid = 320253031
+                persistentId = 3655395067
+                launchID = 1
+                parent = 22
+                position = 0,-19.8,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 0
+                srfN = , -1
+                mass = 3.024
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 22
+                attN = bottom, 24
+                RESOURCE
+                {
+                    name = LiquidFuel
+                    amount = 2385
+                    maxAmount = 2385
+                    flowState = True
+                }
+                RESOURCE
+                {
+                    name = Oxidizer
+                    amount = 2915
+                    maxAmount = 2915
+                    flowState = True
+                }
+            }
+            PART
+            {
+                name = famN1AMotor
+                cid = 306551789
+                uid = 306551789
+                mid = 320253031
+                persistentId = 2515560918
+                launchID = 1
+                parent = 23
+                position = 0,-19.8,0
+                rotation = 0,0,0,1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = 7
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = 0
+                attm = 0
+                srfN = , -1
+                mass = 1.776
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Grandparent
+                rigidAttachment = True
+                modCost = 0
+                modMass = 0
+                attN = top, 23
+                attN = bottom, -1
+                MODULE
+                {
+                    name = ModuleEnginesFX
+                    isEnabled = True
+                    stagingEnabled = True
+                    EngineIgnited = False
+                    staged = False
+                    currentThrottle = 0
+                }
+                MODULE
+                {
+                    name = ModuleAlternator
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+                MODULE
+                {
+                    name = ModuleGimbal
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1ControlFin
+                cid = 1698868091
+                uid = 1698868091
+                mid = 320253031
+                persistentId = 2066693316
+                launchID = 1
+                parent = 24
+                position = 1.710423,-22.73447,0
+                rotation = 0,-1,0,6.123234e-17
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 1
+                srfN = srfAttach, 24
+                mass = 0.056
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleControlSurface
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1ControlFin
+                cid = 4232837825
+                uid = 4232837825
+                mid = 320253031
+                persistentId = 2404595270
+                launchID = 1
+                parent = 24
+                position = 1.047332e-16,-22.73447,1.710423
+                rotation = 0,-0.7071068,0,-0.7071068
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 1
+                srfN = srfAttach, 24
+                mass = 0.056
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleControlSurface
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1ControlFin
+                cid = 2337065559
+                uid = 2337065559
+                mid = 320253031
+                persistentId = 127660492
+                launchID = 1
+                parent = 24
+                position = -1.710423,-22.73447,2.094664e-16
+                rotation = 0,-1.224647e-16,0,-1
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 1
+                srfN = srfAttach, 24
+                mass = 0.056
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleControlSurface
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+            PART
+            {
+                name = famN1ControlFin
+                cid = 468965318
+                uid = 468965318
+                mid = 320253031
+                persistentId = 2030925882
+                launchID = 1
+                parent = 24
+                position = -3.141997e-16,-22.73447,-1.710423
+                rotation = 0,0.7071068,0,-0.7071068
+                mirror = 1,1,1
+                symMethod = Radial
+                istg = -1
+                resPri = 0
+                dstg = 0
+                sqor = -1
+                sepI = -1
+                sidx = -1
+                attm = 1
+                srfN = srfAttach, 24
+                mass = 0.056
+                shielded = False
+                temp = 285
+                tempExt = 285
+                state = 0
+                attached = True
+                flag = Squad/Flags/default
+                rTrf = _default
+                autostrutMode = Off
+                rigidAttachment = False
+                modCost = 0
+                modMass = 0
+                MODULE
+                {
+                    name = ModuleControlSurface
+                    isEnabled = True
+                    stagingEnabled = True
+                }
+            }
+        }
+    }
+    ROSTER
+    {
+        KERBAL
+        {
+            name = Lev Kerman
+            gender = Male
+            type = Crew
+            trait = Pilot
+            brave = 0.65
+            dumb = 0.25
+            state = Assigned
+            idx = 0
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3258245100
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2915263468
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Aleksei Kerman
+            gender = Male
+            type = Crew
+            trait = Pilot
+            brave = 0.93
+            dumb = 0.25
+            state = Assigned
+            idx = 1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 132132918
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3869340740
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Eddwin Kerman
+            gender = Male
+            type = Crew
+            trait = Pilot
+            brave = 0.95
+            dumb = 0.25
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 1398963561
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3555679344
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Gordo Kerman
+            gender = Male
+            type = Crew
+            trait = Pilot
+            brave = 0.9
+            dumb = 0.35
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2947246164
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3571059948
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Tracie Kerman
+            gender = Female
+            type = Crew
+            trait = Pilot
+            brave = 0.86
+            dumb = 0.25
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 877573679
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2038089959
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Karrin Kerman
+            gender = Female
+            type = Crew
+            trait = Scientist
+            brave = 0.74
+            dumb = 0.18
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 1335639430
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2094394941
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Margo Kerman
+            gender = Female
+            type = Crew
+            trait = Engineer
+            brave = 0.67
+            dumb = 0.08
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2648962650
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 1575923049
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Ellyn Kerman
+            gender = Female
+            type = Crew
+            trait = Pilot
+            brave = 0.85
+            dumb = 0.17
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 962023887
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 426394057
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Danni Kerman
+            gender = Female
+            type = Crew
+            trait = Engineer
+            brave = 0.88
+            dumb = 0.12
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2339895354
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3752590685
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Oktavio Kerman
+            gender = Male
+            type = Crew
+            trait = Engineer
+            brave = 0.78
+            dumb = 0.19
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2300988894
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 1588760295
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Alayda Kerman
+            gender = Female
+            type = Crew
+            trait = Engineer
+            brave = 0.78
+            dumb = 0.07
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 2700074408
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 3621317146
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        KERBAL
+        {
+            name = Mollie Kerman
+            gender = Female
+            type = Crew
+            trait = Pilot
+            brave = 0.96
+            dumb = 0.25
+            state = Available
+            idx = -1
+            veteran = False
+            extraXP = 0
+            CAREER_LOG
+            {
+                flight = 0
+            }
+            FLIGHT_LOG
+            {
+                flight = 0
+            }
+            INVENTORY
+            {
+                name = ModuleInventoryPart
+                isEnabled = True
+                inventory = evaChute,evaJetpack
+                STOREDPARTS
+                {
+                    STOREDPART
+                    {
+                        slotIndex = 0
+                        partName = evaChute
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaChute
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 623489650
+                        }
+                    }
+                    STOREDPART
+                    {
+                        slotIndex = 1
+                        partName = evaJetpack
+                        quantity = 1
+                        stackCapacity = 1
+                        variantName = 
+                        PART
+                        {
+                            name = evaJetpack
+                            cid = 0
+                            uid = 0
+                            mid = 0
+                            launchID = 0
+                            parent = 0
+                            position = 0,0,0
+                            rotation = 0,0,0,1
+                            mirror = 1,1,1
+                            symMethod = Radial
+                            persistentId = 1895972480
+                            RESOURCE
+                            {
+                                name = EVA Propellant
+                                amount = 5
+                                maxAmount = 5
+                                flowState = True
+                                isTweakable = False
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    SCENARIO
+    {
+        name = FAMScenarioObjectives
+        scene = 7
+        fleet = modular
+        mission = red-mun
+        focus = Red Mun
+        milestone = 
+        fromPad = True
+        completed = 0
+        siteLatitude = -77.0
+        siteLongitude = 12.0
+        ASSET
+        {
+            role = orbiter
+            partId = 3949585630
+            crew = Lev Kerman
+        }
+        ASSET
+        {
+            role = service
+            partId = 300533822
+        }
+        ASSET
+        {
+            role = lander
+            partId = 2592612066
+            crew = Aleksei Kerman
+        }
+        ASSET
+        {
+            role = descent
+            partId = 2709009203
+        }
+    }
+}

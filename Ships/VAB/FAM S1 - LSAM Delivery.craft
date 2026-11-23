@@ -1,0 +1,898 @@
+ship = FAM S1 - LSAM Delivery
+version = 1.12.5
+description = Seat at least two in the LSAM. Deliver the crew to Jamestown, leave a pilot and reserve propellant aboard, then reuse the same propulsion deck for Apollo 24.
+type = VAB
+size = 4.04,20.17,4.04
+steamPublishedFileId = 0
+persistentId = 2308452753
+rot = 0,0,0,1
+missionFlag = Squad/Flags/default
+vesselType = Lander
+PART
+{
+    part = famLSAMCab_1285040327
+    partName = Part
+    persistentId = 4073270103
+    pos = 0,20.26,0
+    attPos = 0,0,0
+    attPos0 = 0,20.26,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRescueTank_1000282193
+    attN = bottom,famRescueTank_1000282193_0|-0.91|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = ElectricCharge
+        amount = 320
+        maxAmount = 320
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = MonoPropellant
+        amount = 55
+        maxAmount = 55
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    MODULE
+    {
+        name = ModuleCommand
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDataTransmitter
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleReactionWheel
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceContainer
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleScienceExperiment
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleInventoryPart
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleRCSFX
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDeployableSolarPanel
+        isEnabled = True
+    }
+    MODULE
+    {
+        name = ModuleDockingNode
+        isEnabled = True
+        state = Ready
+        dockUId = 0
+        dockNodeIdx = 0
+    }
+}
+PART
+{
+    part = famRescueTank_1000282193
+    partName = Part
+    persistentId = 2082421913
+    pos = 0,19.17,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.09,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLSAMDriveFrame_2727758315
+    attN = top,famLSAMCab_1285040327_0|0.18|0
+    attN = bottom,famLSAMDriveFrame_2727758315_0|-0.18|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 40.5
+        maxAmount = 40.5
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 49.5
+        maxAmount = 49.5
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famLSAMDriveFrame_2727758315
+    partName = Part
+    persistentId = 267994345
+    pos = 0,18.23,0
+    attPos = 0,0,0
+    attPos0 = 0,-0.94,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLSAMDriveTank_3583080829
+    attN = bottom,famLSAMDriveTank_3583080829_0|0.48|0
+    attN = top,famRescueTank_1000282193_0|0.76|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famLSAMDriveTank_3583080829
+    partName = Part
+    persistentId = 1842251641
+    pos = 0,18.23,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famLSAMDriveMotor_1274408158
+    attN = top,famLSAMDriveFrame_2727758315_0|0.48|0
+    attN = bottom,famLSAMDriveMotor_1274408158_0|-0.38|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 243
+        maxAmount = 243
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 297
+        maxAmount = 297
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famLSAMDriveMotor_1274408158
+    partName = Part
+    persistentId = 2550537106
+    pos = 0,18.23,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famPayloadAdapter_1022549064
+    attN = top,famLSAMDriveTank_3583080829_0|-0.38|0
+    attN = bottom,famPayloadAdapter_1022549064_0|-0.76|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famPayloadAdapter_1022549064
+    partName = Part
+    persistentId = 1306692829
+    pos = 0,17.03,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.2,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 3
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 571.084
+    modMass = 0.71385
+    modSize = 0,0,0
+    link = famSaturnIVBTank_2784726514
+    attN = top,famLSAMDriveMotor_1274408158_0|0.44|0
+    attN = bottom,famSaturnIVBTank_2784726514_0|-0.44|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    MODULE
+    {
+        name = ModuleProceduralFairing
+        isEnabled = True
+        interstageCraftID = 0
+        nArcs = 2
+        ejectionForce = 60
+        useClamshell = True
+        stagingEnabled = True
+        fsm = st_idle
+        XSECTION
+        {
+            h = 0.00000
+            r = 1.25000
+        }
+        XSECTION
+        {
+            h = 0.63000
+            r = 2.02000
+        }
+        XSECTION
+        {
+            h = 4.27000
+            r = 2.02000
+        }
+        XSECTION
+        {
+            h = 5.42000
+            r = 0.15000
+        }
+    }
+}
+PART
+{
+    part = famSaturnIVBTank_2784726514
+    partName = Part
+    persistentId = 3006679354
+    pos = 0,14.89,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.14,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnIVBMotor_3539778916
+    attN = bottom,famSaturnIVBMotor_3539778916_0|-1.04176|0
+    attN = top,famPayloadAdapter_1022549064_0|1.7|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 367.2
+        maxAmount = 612
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 448.8
+        maxAmount = 748
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famSaturnIVBMotor_3539778916
+    partName = Part
+    persistentId = 708296920
+    pos = 0,14.89,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 4
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing250_1111728373
+    attN = top,famSaturnIVBTank_2784726514_0|-1.04176|0
+    attN = bottom,famRing250_1111728373_0|-1.7|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing250_1111728373
+    partName = Part
+    persistentId = 703814598
+    pos = 0,13.11,0
+    attPos = 0,0,0
+    attPos0 = 0,-1.78,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 4
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnIITank_893685859
+    attN = top,famSaturnIVBMotor_3539778916_0|0.08|0
+    attN = bottom,famSaturnIITank_893685859_0|-0.08|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnIITank_893685859
+    partName = Part
+    persistentId = 1313471623
+    pos = 0,10.705,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.405,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Root
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnIIMotor_3901497691
+    attN = bottom,famSaturnIIMotor_3901497691_0|-1.42476|0
+    attN = top,famRing250_1111728373_0|2.325|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 1242
+        maxAmount = 1242
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 1518
+        maxAmount = 1518
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famSaturnIIMotor_3901497691
+    partName = Part
+    persistentId = 96124884
+    pos = 0,10.705,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 5
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famRing375_2676691405
+    attN = top,famSaturnIITank_893685859_0|-1.42476|0
+    attN = bottom,famRing375_2676691405_0|-2.325|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famRing375_2676691405
+    partName = Part
+    persistentId = 2725515617
+    pos = 0,8.29,0
+    attPos = 0,0,0
+    attPos0 = 0,-2.415,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 5
+    resPri = 0
+    dstg = 0
+    sidx = 1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnICTank_109199479
+    attN = top,famSaturnIIMotor_3901497691_0|0.09|0
+    attN = bottom,famSaturnICTank_109199479_0|-0.09|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnICTank_109199479
+    partName = Part
+    persistentId = 1866813177
+    pos = 0,4.6,0
+    attPos = 0,0,0
+    attPos0 = 0,-3.69,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnICMotor_1904570593
+    attN = bottom,famSaturnICMotor_1904570593_0|-2.63228|0
+    attN = top,famRing375_2676691405_0|3.6|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+    RESOURCE
+    {
+        name = LiquidFuel
+        amount = 3060
+        maxAmount = 3420
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+    RESOURCE
+    {
+        name = Oxidizer
+        amount = 3740
+        maxAmount = 4180
+        flowState = True
+        isTweakable = True
+        hideFlow = False
+        isVisible = True
+        flowMode = Both
+    }
+}
+PART
+{
+    part = famSaturnICMotor_1904570593
+    partName = Part
+    persistentId = 1688737055
+    pos = 0,4.6,0
+    attPos = 0,0,0
+    attPos0 = 0,0,0
+    rot = 0,0,0,1
+    attRot = 0,0,0,1
+    attRot0 = 0,0,0,1
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Grandparent
+    rigidAttachment = True
+    istg = 6
+    resPri = 0
+    dstg = 0
+    sidx = 0
+    sqor = -1
+    sepI = -1
+    attm = 0
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    link = famSaturnControlFin_4024558914
+    link = famSaturnControlFin_2565264852
+    link = famSaturnControlFin_32474222
+    link = famSaturnControlFin_1994962168
+    attN = top,famSaturnICTank_109199479_0|-2.63228|0
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnControlFin_4024558914
+    partName = Part
+    persistentId = 1875158154
+    pos = 1.215405,1.687725,1.215405
+    attPos = 0,0,0
+    attPos0 = 1.215405,-2.912275,1.215405
+    rot = 0,-0.9238795,0,-0.3826834
+    attRot = 0,0,0,1
+    attRot0 = 0,-0.9238795,0,-0.3826834
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famSaturnICMotor_1904570593
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnControlFin_2565264852
+    partName = Part
+    persistentId = 2530110234
+    pos = -1.215405,1.687725,1.215405
+    attPos = 0,0,0
+    attPos0 = -1.215405,-2.912275,1.215405
+    rot = 0,-0.3826834,0,-0.9238795
+    attRot = 0,0,0,1
+    attRot0 = 0,-0.3826834,0,-0.9238795
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famSaturnICMotor_1904570593
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnControlFin_32474222
+    partName = Part
+    persistentId = 3677871042
+    pos = -1.215405,1.687725,-1.215405
+    attPos = 0,0,0
+    attPos0 = -1.215405,-2.912275,-1.215405
+    rot = 0,0.3826834,0,-0.9238795
+    attRot = 0,0,0,1
+    attRot0 = 0,0.3826834,0,-0.9238795
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famSaturnICMotor_1904570593
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
+PART
+{
+    part = famSaturnControlFin_1994962168
+    partName = Part
+    persistentId = 1864307800
+    pos = 1.215405,1.687725,-1.215405
+    attPos = 0,0,0
+    attPos0 = 1.215405,-2.912275,-1.215405
+    rot = 0,0.9238795,0,-0.3826834
+    attRot = 0,0,0,1
+    attRot0 = 0,0.9238795,0,-0.3826834
+    mir = 1,1,1
+    symMethod = Radial
+    autostrutMode = Off
+    rigidAttachment = False
+    istg = -1
+    resPri = 0
+    dstg = 0
+    sidx = -1
+    sqor = -1
+    sepI = -1
+    attm = 1
+    modCost = 0
+    modMass = 0
+    modSize = 0,0,0
+    srfN = srfAttach,famSaturnICMotor_1904570593
+    EVENTS
+    {
+    }
+    ACTIONS
+    {
+    }
+    PARTDATA
+    {
+    }
+}
